@@ -82,7 +82,7 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.notex</groupId>
+      <groupId>com.notex.mybatis.generator</groupId>
       <artifactId>mybatis-generator-core</artifactId>
       <version>${project.version}</version>
     </dependency>
