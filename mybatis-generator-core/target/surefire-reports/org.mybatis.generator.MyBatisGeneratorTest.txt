@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: org.mybatis.generator.MyBatisGeneratorTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec <<< FAILURE! - in org.mybatis.generator.MyBatisGeneratorTest
+testGenerateMyBatis3(org.mybatis.generator.MyBatisGeneratorTest)  Time elapsed: 0.016 sec  <<< FAILURE!
+java.lang.AssertionError: Expected exception: org.mybatis.generator.exception.InvalidConfigurationException
+

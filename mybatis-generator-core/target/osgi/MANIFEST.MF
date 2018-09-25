@@ -1,0 +1,55 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1532156626564
+Build-Jdk: 1.8.0_161
+Built-By: Administrator
+Bundle-Description: The MyBatis parent POM.
+Bundle-DocURL: http://www.mybatis.org/mybatis-generator/mybatis-generato
+ r-core/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: MyBatis Generator Core
+Bundle-SymbolicName: com.notex.mybatis-generator-core
+Bundle-Vendor: MyBatis.org
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Implementation-Build-Date: 2018-07-21 07:03:42+0000
+Implementation-Title: MyBatis Generator Core
+Implementation-Vendor: MyBatis.org
+Implementation-Vendor-Id: com.notex
+Implementation-Version: 1.0-SNAPSHOT
+Import-Package: javax.xml.parsers,org.apache.log4j,org.apache.tools.ant,
+ org.apache.tools.ant.types,org.w3c.dom,org.xml.sax
+Include-Resource: org/mybatis/generator/config/xml/ibator-config_1_0.dtd
+ =src/main/resources/org/mybatis/generator/config/xml/ibator-config_1_0.
+ dtd,org/mybatis/generator/config/xml/mybatis-generator-config_1_0.dtd=s
+ rc/main/resources/org/mybatis/generator/config/xml/mybatis-generator-co
+ nfig_1_0.dtd,org/mybatis/generator/internal/util/messages/messages.prop
+ erties=src/main/resources/org/mybatis/generator/internal/util/messages/
+ messages.properties,META-INF/LICENSE=LICENSE,META-INF/NOTICE=NOTICE
+Main-Class: org.mybatis.generator.api.ShellRunner
+Private-Package: org.mybatis.generator.ant,org.mybatis.generator.api,org
+ .mybatis.generator.api.dom,org.mybatis.generator.api.dom.java,org.mybat
+ is.generator.api.dom.xml,org.mybatis.generator.codegen,org.mybatis.gene
+ rator.codegen.ibatis2,org.mybatis.generator.codegen.ibatis2.dao,org.myb
+ atis.generator.codegen.ibatis2.dao.elements,org.mybatis.generator.codeg
+ en.ibatis2.dao.templates,org.mybatis.generator.codegen.ibatis2.model,or
+ g.mybatis.generator.codegen.ibatis2.sqlmap,org.mybatis.generator.codege
+ n.ibatis2.sqlmap.elements,org.mybatis.generator.codegen.mybatis3,org.my
+ batis.generator.codegen.mybatis3.javamapper,org.mybatis.generator.codeg
+ en.mybatis3.javamapper.elements,org.mybatis.generator.codegen.mybatis3.
+ javamapper.elements.annotated,org.mybatis.generator.codegen.mybatis3.ja
+ vamapper.elements.sqlprovider,org.mybatis.generator.codegen.mybatis3.mo
+ del,org.mybatis.generator.codegen.mybatis3.xmlmapper,org.mybatis.genera
+ tor.codegen.mybatis3.xmlmapper.elements,org.mybatis.generator.config,or
+ g.mybatis.generator.config.xml,org.mybatis.generator.exception,org.myba
+ tis.generator.internal,org.mybatis.generator.internal.db,org.mybatis.ge
+ nerator.internal.rules,org.mybatis.generator.internal.types,org.mybatis
+ .generator.internal.util,org.mybatis.generator.internal.util.messages,o
+ rg.mybatis.generator.logging,org.mybatis.generator.plugins
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+Specification-Title: MyBatis Generator Core
+Specification-Vendor: MyBatis.org
+Specification-Version: 1.0-SNAPSHOT
+Tool: Bnd-2.4.1.201501161923
+X-Compile-Source-JDK: 1.7
+X-Compile-Target-JDK: 1.7

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BaseExample.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MyBatis Generator Core</a> &gt; <a href="index.source.html" class="el_package">org.mybatis.generator.codegen.mybatis3.model</a> &gt; <span class="el_source">BaseExample.java</span></div><h1>BaseExample.java</h1><pre class="source lang-java linenums">/**
+ *    Copyright 2006-2015 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.generator.codegen.mybatis3.model;
+
+import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 新增值源码包
+ * Created by tangyunhan on 2016-08-01 14:18.
+ */
+public abstract class BaseExample&lt;T&gt; implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    protected String orderByClause;
+
+    protected String groupByClause;
+
+    protected String limitValue;
+
+    protected boolean distinct;
+
+    protected List&lt;T&gt; oredCriteria;
+    private Class&lt;T&gt; persistentClass;
+
+
+    /**
+     * @mbggenerated
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+<span class="nc" id="L46">    public BaseExample() {</span>
+<span class="nc" id="L47">        this.persistentClass = (Class&lt;T&gt;) ((ParameterizedType) getClass()</span>
+<span class="nc" id="L48">                .getGenericSuperclass()).getActualTypeArguments()[0];</span>
+<span class="nc" id="L49">        oredCriteria = new ArrayList();</span>
+<span class="nc" id="L50">    }</span>
+
+    /**
+     * @mbggenerated
+     */
+    public String getOrderByClause() {
+<span class="nc" id="L56">        return orderByClause;</span>
+    }
+
+    /**
+     * @mbggenerated
+     */
+    public void setOrderByClause(String orderByClause) {
+<span class="nc" id="L63">        this.orderByClause = orderByClause;</span>
+<span class="nc" id="L64">    }</span>
+
+    /**
+     * @mbggenerated
+     */
+    public String getGroupByClause() {
+<span class="nc" id="L70">        return groupByClause;</span>
+    }
+
+    /**
+     * @mbggenerated
+     */
+    public void setGroupByClause(String groupByClause) {
+<span class="nc" id="L77">        this.groupByClause = groupByClause;</span>
+<span class="nc" id="L78">    }</span>
+
+    /**
+     * @mbggenerated
+     */
+    public String getLimitValue() {
+<span class="nc" id="L84">        return limitValue;</span>
+    }
+
+    /**
+     * @mbggenerated
+     */
+    public void setLimitValue(String limitValue) {
+<span class="nc" id="L91">        this.limitValue = limitValue;</span>
+<span class="nc" id="L92">    }</span>
+
+    /**
+     * @mbggenerated
+     */
+    public boolean isDistinct() {
+<span class="nc" id="L98">        return distinct;</span>
+    }
+
+    /**
+     * @mbggenerated
+     */
+    public void setDistinct(boolean distinct) {
+<span class="nc" id="L105">        this.distinct = distinct;</span>
+<span class="nc" id="L106">    }</span>
+
+    /**
+     * @mbggenerated
+     */
+    public List&lt;T&gt; getOredCriteria() {
+<span class="nc" id="L112">        return oredCriteria;</span>
+    }
+
+    /**
+     * @mbggenerated
+     */
+    public void or(T criteria) {
+<span class="nc" id="L119">        oredCriteria.add(criteria);</span>
+<span class="nc" id="L120">    }</span>
+
+    /**
+     * @mbggenerated
+     */
+    public T or() {
+<span class="nc" id="L126">        T criteria = createCriteriaInternal();</span>
+<span class="nc" id="L127">        oredCriteria.add(criteria);</span>
+<span class="nc" id="L128">        return criteria;</span>
+    }
+
+    /**
+     * @mbggenerated
+     */
+    public T createCriteria() {
+<span class="nc" id="L135">        T criteria = createCriteriaInternal();</span>
+<span class="nc bnc" id="L136" title="All 2 branches missed.">        if (oredCriteria.size() == 0) {</span>
+<span class="nc" id="L137">            oredCriteria.add(criteria);</span>
+        }
+<span class="nc" id="L139">        return criteria;</span>
+    }
+
+
+    /**
+     * @mbggenerated
+     */
+    protected T createCriteriaInternal() {
+//        T criteria = new T();
+<span class="nc" id="L148">        T criteria = null;</span>
+        try {
+<span class="nc" id="L150">            criteria = persistentClass.newInstance();</span>
+<span class="nc" id="L151">        } catch (Exception  e) {</span>
+<span class="nc" id="L152">            e.printStackTrace();</span>
+<span class="nc" id="L153">        }</span>
+<span class="nc" id="L154">        return criteria;</span>
+    }
+
+    /**
+     * @mbggenerated
+     */
+    public void clear() {
+<span class="nc" id="L161">        oredCriteria.clear();</span>
+<span class="nc" id="L162">        orderByClause = null;</span>
+<span class="nc" id="L163">        distinct = false;</span>
+<span class="nc" id="L164">    }</span>
+
+
+    public static class Criterion implements Serializable {
+        private String condition;
+
+        private Object value;
+
+        private Object secondValue;
+
+        private boolean noValue;
+
+        private boolean singleValue;
+
+        private boolean betweenValue;
+
+        private boolean listValue;
+
+        private String typeHandler;
+
+        public Criterion() {
+<span class="nc" id="L185">            super();</span>
+<span class="nc" id="L186">        }</span>
+
+        public Criterion(String condition) {
+<span class="nc" id="L189">            super();</span>
+<span class="nc" id="L190">            this.condition = condition;</span>
+<span class="nc" id="L191">            this.typeHandler = null;</span>
+<span class="nc" id="L192">            this.noValue = true;</span>
+<span class="nc" id="L193">        }</span>
+
+        public Criterion(String condition, Object value, String typeHandler) {
+<span class="nc" id="L196">            super();</span>
+<span class="nc" id="L197">            this.condition = condition;</span>
+<span class="nc" id="L198">            this.value = value;</span>
+<span class="nc" id="L199">            this.typeHandler = typeHandler;</span>
+<span class="nc bnc" id="L200" title="All 2 branches missed.">            if (value instanceof List&lt;?&gt;) {</span>
+<span class="nc" id="L201">                this.listValue = true;</span>
+            } else {
+<span class="nc" id="L203">                this.singleValue = true;</span>
+            }
+<span class="nc" id="L205">        }</span>
+
+        public Criterion(String condition, Object value) {
+<span class="nc" id="L208">            this(condition, value, null);</span>
+<span class="nc" id="L209">        }</span>
+
+        public Criterion(String condition, Object value, Object secondValue, String typeHandler) {
+<span class="nc" id="L212">            super();</span>
+<span class="nc" id="L213">            this.condition = condition;</span>
+<span class="nc" id="L214">            this.value = value;</span>
+<span class="nc" id="L215">            this.secondValue = secondValue;</span>
+<span class="nc" id="L216">            this.typeHandler = typeHandler;</span>
+<span class="nc" id="L217">            this.betweenValue = true;</span>
+<span class="nc" id="L218">        }</span>
+
+        public Criterion(String condition, Object value, Object secondValue) {
+<span class="nc" id="L221">            this(condition, value, secondValue, null);</span>
+<span class="nc" id="L222">        }</span>
+
+        public String getCondition() {
+<span class="nc" id="L225">            return condition;</span>
+        }
+
+        public Object getValue() {
+<span class="nc" id="L229">            return value;</span>
+        }
+
+        public Object getSecondValue() {
+<span class="nc" id="L233">            return secondValue;</span>
+        }
+
+        public boolean isNoValue() {
+<span class="nc" id="L237">            return noValue;</span>
+        }
+
+        public boolean isSingleValue() {
+<span class="nc" id="L241">            return singleValue;</span>
+        }
+
+        public boolean isBetweenValue() {
+<span class="nc" id="L245">            return betweenValue;</span>
+        }
+
+        public boolean isListValue() {
+<span class="nc" id="L249">            return listValue;</span>
+        }
+
+        public String getTypeHandler() {
+<span class="nc" id="L253">            return typeHandler;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

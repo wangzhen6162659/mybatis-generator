@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UpdateByAppIdAndIdWithoutBLOBsElementGenerator.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MyBatis Generator Core</a> &gt; <a href="index.source.html" class="el_package">org.mybatis.generator.codegen.mybatis3.xmlmapper.elements</a> &gt; <span class="el_source">UpdateByAppIdAndIdWithoutBLOBsElementGenerator.java</span></div><h1>UpdateByAppIdAndIdWithoutBLOBsElementGenerator.java</h1><pre class="source lang-java linenums">/**
+ *    Copyright 2006-2015 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.generator.codegen.mybatis3.xmlmapper.elements;
+
+import org.mybatis.generator.api.IntrospectedColumn;
+import org.mybatis.generator.api.dom.OutputUtilities;
+import org.mybatis.generator.api.dom.xml.Attribute;
+import org.mybatis.generator.api.dom.xml.TextElement;
+import org.mybatis.generator.api.dom.xml.XmlElement;
+import org.mybatis.generator.codegen.mybatis3.MyBatis3FormattingUtilities;
+
+import java.util.Iterator;
+
+/**
+ * 
+ * @author Jeff Butler
+ * 
+ */
+public class UpdateByAppIdAndIdWithoutBLOBsElementGenerator extends
+        AbstractXmlElementGenerator {
+
+    private boolean isSimple;
+
+    public UpdateByAppIdAndIdWithoutBLOBsElementGenerator(boolean isSimple) {
+<span class="nc" id="L38">        super();</span>
+<span class="nc" id="L39">        this.isSimple = isSimple;</span>
+<span class="nc" id="L40">    }</span>
+
+    @Override
+    public void addElements(XmlElement parentElement) {
+<span class="nc" id="L44">        XmlElement answer = new XmlElement(&quot;update&quot;); //$NON-NLS-1$</span>
+
+        //answer.addAttribute(new Attribute(
+        //        &quot;id&quot;, introspectedTable.getUpdateByPrimaryKeyStatementId())); //$NON-NLS-1$
+<span class="nc" id="L48">        answer.addAttribute(new Attribute(</span>
+                &quot;id&quot;, &quot;updateByAppIdAndId&quot;)); //$NON-NLS-1$
+<span class="nc" id="L50">        answer.addAttribute(new Attribute(&quot;parameterType&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L51">                introspectedTable.getBaseRecordType()));</span>
+
+<span class="nc" id="L53">        context.getCommentGenerator().addComment(answer);</span>
+
+<span class="nc" id="L55">        StringBuilder sb = new StringBuilder();</span>
+<span class="nc" id="L56">        sb.append(&quot;update &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L57">        sb.append(introspectedTable.getFullyQualifiedTableNameAtRuntime());</span>
+<span class="nc" id="L58">        answer.addElement(new TextElement(sb.toString()));</span>
+
+        // set up for first column
+<span class="nc" id="L61">        sb.setLength(0);</span>
+<span class="nc" id="L62">        sb.append(&quot;set &quot;); //$NON-NLS-1$</span>
+
+        Iterator&lt;IntrospectedColumn&gt; iter;
+<span class="nc bnc" id="L65" title="All 2 branches missed.">        if (isSimple) {</span>
+<span class="nc" id="L66">            iter = introspectedTable.getNonPrimaryKeyColumns().iterator();</span>
+        } else {
+<span class="nc" id="L68">            iter = introspectedTable.getBaseColumns().iterator();</span>
+        }
+<span class="nc bnc" id="L70" title="All 2 branches missed.">        while (iter.hasNext()) {</span>
+<span class="nc" id="L71">            IntrospectedColumn introspectedColumn = iter.next();</span>
+
+<span class="nc" id="L73">            sb.append(MyBatis3FormattingUtilities</span>
+<span class="nc" id="L74">                    .getEscapedColumnName(introspectedColumn));</span>
+<span class="nc" id="L75">            sb.append(&quot; = &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L76">            sb.append(MyBatis3FormattingUtilities</span>
+<span class="nc" id="L77">                    .getParameterClause(introspectedColumn));</span>
+
+<span class="nc bnc" id="L79" title="All 2 branches missed.">            if (iter.hasNext()) {</span>
+<span class="nc" id="L80">                sb.append(',');</span>
+            }
+
+<span class="nc" id="L83">            answer.addElement(new TextElement(sb.toString()));</span>
+
+            // set up for the next column
+<span class="nc bnc" id="L86" title="All 2 branches missed.">            if (iter.hasNext()) {</span>
+<span class="nc" id="L87">                sb.setLength(0);</span>
+<span class="nc" id="L88">                OutputUtilities.xmlIndent(sb, 1);</span>
+            }
+<span class="nc" id="L90">        }</span>
+
+<span class="nc" id="L92">        boolean and = false;</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">        for (IntrospectedColumn introspectedColumn : introspectedTable</span>
+<span class="nc" id="L94">                .getPrimaryKeyColumns()) {</span>
+<span class="nc" id="L95">            sb.setLength(0);</span>
+<span class="nc bnc" id="L96" title="All 2 branches missed.">            if (and) {</span>
+<span class="nc" id="L97">                sb.append(&quot;  and &quot;); //$NON-NLS-1$</span>
+            } else {
+<span class="nc" id="L99">                sb.append(&quot;where &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L100">                and = true;</span>
+            }
+
+<span class="nc" id="L103">            sb.append(MyBatis3FormattingUtilities</span>
+<span class="nc" id="L104">                    .getEscapedColumnName(introspectedColumn));</span>
+<span class="nc" id="L105">            sb.append(&quot; = &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L106">            sb.append(MyBatis3FormattingUtilities</span>
+<span class="nc" id="L107">                    .getParameterClause(introspectedColumn));</span>
+<span class="nc" id="L108">            answer.addElement(new TextElement(sb.toString()));</span>
+<span class="nc" id="L109">        }</span>
+
+<span class="nc" id="L111">        IntrospectedColumn introspectedColumn = introspectedTable.getColumn(&quot;app_id&quot;);</span>
+<span class="nc bnc" id="L112" title="All 2 branches missed.">        if (introspectedColumn != null) {</span>
+<span class="nc" id="L113">            sb.setLength(0);</span>
+<span class="nc" id="L114">            sb.append(&quot; and app_id = &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L115">            sb.append(MyBatis3FormattingUtilities.getParameterClause(introspectedColumn));</span>
+<span class="nc" id="L116">            answer.addElement(new TextElement(sb.toString()));</span>
+        }
+
+<span class="nc" id="L119">        if (context.getPlugins()</span>
+<span class="nc bnc" id="L120" title="All 2 branches missed.">                .sqlMapUpdateByPrimaryKeyWithoutBLOBsElementGenerated(answer,</span>
+                        introspectedTable)) {
+<span class="nc" id="L122">            parentElement.addElement(answer);</span>
+        }
+<span class="nc" id="L124">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

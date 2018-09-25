@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>JavaClientGeneratorConfiguration.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MyBatis Generator Core</a> &gt; <a href="index.source.html" class="el_package">org.mybatis.generator.config</a> &gt; <span class="el_source">JavaClientGeneratorConfiguration.java</span></div><h1>JavaClientGeneratorConfiguration.java</h1><pre class="source lang-java linenums">/**
+ *    Copyright 2006-2015 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.generator.config;
+
+import org.mybatis.generator.api.dom.xml.Attribute;
+import org.mybatis.generator.api.dom.xml.XmlElement;
+
+import java.util.List;
+
+import static org.mybatis.generator.internal.util.StringUtility.stringHasValue;
+import static org.mybatis.generator.internal.util.messages.Messages.getString;
+
+/**
+ * @author Jeff Butler
+ */
+public class JavaClientGeneratorConfiguration extends TypedPropertyHolder {
+    private String targetPackage;
+    private String implementationPackage;
+    private String targetProject;
+    private String targetSuperClass;
+    private String targetSuperGeneric;
+    private String targetIsGenMethod;
+
+    /**
+     *  
+     */
+    public JavaClientGeneratorConfiguration() {
+<span class="fc" id="L41">        super();</span>
+<span class="fc" id="L42">    }</span>
+
+    public String getTargetProject() {
+<span class="nc" id="L45">        return targetProject;</span>
+    }
+
+    public void setTargetProject(String targetProject) {
+<span class="fc" id="L49">        this.targetProject = targetProject;</span>
+<span class="fc" id="L50">    }</span>
+
+    public String getTargetPackage() {
+<span class="nc" id="L53">        return targetPackage;</span>
+    }
+
+    public void setTargetPackage(String targetPackage) {
+<span class="fc" id="L57">        this.targetPackage = targetPackage;</span>
+<span class="fc" id="L58">    }</span>
+
+    public String getTargetIsGenMethod() {
+<span class="nc" id="L61">        return targetIsGenMethod;</span>
+    }
+
+    public void setTargetIsGenMethod(String targetIsGenMethod) {
+<span class="fc" id="L65">        this.targetIsGenMethod = targetIsGenMethod;</span>
+<span class="fc" id="L66">    }</span>
+
+    public String getTargetSuperClass() {
+<span class="nc" id="L69">        return targetSuperClass;</span>
+    }
+
+    public void setTargetSuperClass(String targetSuperClass) {
+<span class="fc" id="L73">        this.targetSuperClass = targetSuperClass;</span>
+<span class="fc" id="L74">    }</span>
+
+    public String getTargetSuperGeneric() {
+<span class="nc" id="L77">        return targetSuperGeneric;</span>
+    }
+
+    public void setTargetSuperGeneric(String targetSuperGeneric) {
+<span class="fc" id="L81">        this.targetSuperGeneric = targetSuperGeneric;</span>
+<span class="fc" id="L82">    }</span>
+
+    public XmlElement toXmlElement() {
+<span class="nc" id="L85">        XmlElement answer = new XmlElement(&quot;javaClientGenerator&quot;); //$NON-NLS-1$</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">        if (getConfigurationType() != null) {</span>
+<span class="nc" id="L87">            answer.addAttribute(new Attribute(&quot;type&quot;, getConfigurationType())); //$NON-NLS-1$</span>
+        }
+
+<span class="nc bnc" id="L90" title="All 2 branches missed.">        if (targetPackage != null) {</span>
+<span class="nc" id="L91">            answer.addAttribute(new Attribute(&quot;targetPackage&quot;, targetPackage)); //$NON-NLS-1$</span>
+        }
+
+<span class="nc bnc" id="L94" title="All 2 branches missed.">        if (targetProject != null) {</span>
+<span class="nc" id="L95">            answer.addAttribute(new Attribute(&quot;targetProject&quot;, targetProject)); //$NON-NLS-1$</span>
+        }
+
+<span class="nc bnc" id="L98" title="All 2 branches missed.">        if (targetSuperClass != null) {</span>
+<span class="nc" id="L99">            answer.addAttribute(new Attribute(&quot;targetSuperClass&quot;, targetSuperClass)); //tangyh</span>
+        }
+
+<span class="nc bnc" id="L102" title="All 2 branches missed.">        if (targetIsGenMethod != null) {</span>
+<span class="nc" id="L103">            answer.addAttribute(new Attribute(&quot;targetIsGenMethod&quot;, targetIsGenMethod)); //tangyh</span>
+        }
+
+<span class="nc bnc" id="L106" title="All 2 branches missed.">        if (targetSuperGeneric != null) {</span>
+<span class="nc" id="L107">            answer.addAttribute(new Attribute(&quot;targetSuperGeneric&quot;, targetSuperGeneric)); //tangyh</span>
+        }
+
+<span class="nc bnc" id="L110" title="All 2 branches missed.">        if (implementationPackage != null) {</span>
+<span class="nc" id="L111">            answer.addAttribute(new Attribute(</span>
+                    &quot;implementationPackage&quot;, targetProject)); //$NON-NLS-1$
+        }
+
+<span class="nc" id="L115">        addPropertyXmlElements(answer);</span>
+
+<span class="nc" id="L117">        return answer;</span>
+    }
+
+    public String getImplementationPackage() {
+<span class="nc" id="L121">        return implementationPackage;</span>
+    }
+
+    public void setImplementationPackage(String implementationPackage) {
+<span class="fc" id="L125">        this.implementationPackage = implementationPackage;</span>
+<span class="fc" id="L126">    }</span>
+
+    public void validate(List&lt;String&gt; errors, String contextId) {
+<span class="pc bpc" id="L129" title="1 of 2 branches missed.">        if (!stringHasValue(targetProject)) {</span>
+<span class="nc" id="L130">            errors.add(getString(&quot;ValidationError.2&quot;, contextId)); //$NON-NLS-1$</span>
+        }
+
+<span class="pc bpc" id="L133" title="1 of 2 branches missed.">        if (!stringHasValue(targetPackage)) {</span>
+<span class="nc" id="L134">            errors.add(getString(&quot;ValidationError.12&quot;, //$NON-NLS-1$</span>
+                    &quot;javaClientGenerator&quot;, contextId)); //$NON-NLS-1$
+        }
+
+<span class="pc bpc" id="L138" title="1 of 2 branches missed.">        if (!stringHasValue(getConfigurationType())) {</span>
+<span class="nc" id="L139">            errors.add(getString(&quot;ValidationError.20&quot;, //$NON-NLS-1$</span>
+                    contextId));
+        }
+<span class="fc" id="L142">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
