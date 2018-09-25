@@ -32,8 +32,8 @@ public class ParserEntityResolver implements EntityResolver {
 	 *  
 	 */
     public ParserEntityResolver() {
-<span class="fc" id="L35">        super();</span>
-<span class="fc" id="L36">    }</span>
+<span class="nc" id="L35">        super();</span>
+<span class="nc" id="L36">    }</span>
 
     /*
      * (non-Javadoc)
@@ -43,21 +43,21 @@ public class ParserEntityResolver implements EntityResolver {
      */
     public InputSource resolveEntity(String publicId, String systemId)
             throws SAXException, IOException {
-<span class="pc bpc" id="L46" title="1 of 2 branches missed.">        if (XmlConstants.IBATOR_CONFIG_PUBLIC_ID.equalsIgnoreCase(publicId)) {</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">        if (XmlConstants.IBATOR_CONFIG_PUBLIC_ID.equalsIgnoreCase(publicId)) {</span>
 <span class="nc" id="L47">            InputStream is = getClass().getClassLoader().getResourceAsStream(</span>
                     &quot;org/mybatis/generator/config/xml/ibator-config_1_0.dtd&quot;); //$NON-NLS-1$
 <span class="nc" id="L49">            InputSource ins = new InputSource(is);</span>
 
 <span class="nc" id="L51">            return ins;</span>
-<span class="fc" id="L52">        } else if (XmlConstants.MYBATIS_GENERATOR_CONFIG_PUBLIC_ID</span>
-<span class="pc bpc" id="L53" title="1 of 2 branches missed.">                .equalsIgnoreCase(publicId)) {</span>
-<span class="fc" id="L54">            InputStream is = getClass()</span>
-<span class="fc" id="L55">                    .getClassLoader()</span>
-<span class="fc" id="L56">                    .getResourceAsStream(</span>
+<span class="nc" id="L52">        } else if (XmlConstants.MYBATIS_GENERATOR_CONFIG_PUBLIC_ID</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">                .equalsIgnoreCase(publicId)) {</span>
+<span class="nc" id="L54">            InputStream is = getClass()</span>
+<span class="nc" id="L55">                    .getClassLoader()</span>
+<span class="nc" id="L56">                    .getResourceAsStream(</span>
                             &quot;org/mybatis/generator/config/xml/mybatis-generator-config_1_0.dtd&quot;); //$NON-NLS-1$
-<span class="fc" id="L58">            InputSource ins = new InputSource(is);</span>
+<span class="nc" id="L58">            InputSource ins = new InputSource(is);</span>
 
-<span class="fc" id="L60">            return ins;</span>
+<span class="nc" id="L60">            return ins;</span>
         } else {
 <span class="nc" id="L62">            return null;</span>
         }

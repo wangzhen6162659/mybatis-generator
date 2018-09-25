@@ -124,24 +124,24 @@ public class TableConfiguration extends PropertyHolder {
      *            the context
      */
     public TableConfiguration(Context context) {
-<span class="fc" id="L127">        super();</span>
+<span class="nc" id="L127">        super();</span>
 
-<span class="fc" id="L129">        this.modelType = context.getDefaultModelType();</span>
+<span class="nc" id="L129">        this.modelType = context.getDefaultModelType();</span>
 
-<span class="fc" id="L131">        columnOverrides = new ArrayList&lt;ColumnOverride&gt;();</span>
-<span class="fc" id="L132">        ignoredColumns = new HashMap&lt;IgnoredColumn, Boolean&gt;();</span>
+<span class="nc" id="L131">        columnOverrides = new ArrayList&lt;ColumnOverride&gt;();</span>
+<span class="nc" id="L132">        ignoredColumns = new HashMap&lt;IgnoredColumn, Boolean&gt;();</span>
 
-<span class="fc" id="L134">        insertStatementEnabled = true;</span>
-<span class="fc" id="L135">        selectByPrimaryKeyStatementEnabled = true;</span>
-<span class="fc" id="L136">        selectByExampleStatementEnabled = true;</span>
-<span class="fc" id="L137">        updateByPrimaryKeyStatementEnabled = true;</span>
-<span class="fc" id="L138">        deleteByPrimaryKeyStatementEnabled = true;</span>
-<span class="fc" id="L139">        deleteByExampleStatementEnabled = true;</span>
-<span class="fc" id="L140">        countByExampleStatementEnabled = true;</span>
-<span class="fc" id="L141">        updateByExampleStatementEnabled = true;</span>
-<span class="fc" id="L142">        gxqptExtStatementEnabled = true;</span>
-<span class="fc" id="L143">        gxqptAppIdEnabled = true;</span>
-<span class="fc" id="L144">    }</span>
+<span class="nc" id="L134">        insertStatementEnabled = true;</span>
+<span class="nc" id="L135">        selectByPrimaryKeyStatementEnabled = true;</span>
+<span class="nc" id="L136">        selectByExampleStatementEnabled = true;</span>
+<span class="nc" id="L137">        updateByPrimaryKeyStatementEnabled = true;</span>
+<span class="nc" id="L138">        deleteByPrimaryKeyStatementEnabled = true;</span>
+<span class="nc" id="L139">        deleteByExampleStatementEnabled = true;</span>
+<span class="nc" id="L140">        countByExampleStatementEnabled = true;</span>
+<span class="nc" id="L141">        updateByExampleStatementEnabled = true;</span>
+<span class="nc" id="L142">        gxqptExtStatementEnabled = true;</span>
+<span class="nc" id="L143">        gxqptAppIdEnabled = true;</span>
+<span class="nc" id="L144">    }</span>
 
     /**
      * Checks if is delete by primary key statement enabled.
@@ -418,7 +418,7 @@ public class TableConfiguration extends PropertyHolder {
      * @return true, if successful
      */
     public boolean areAnyStatementsEnabled() {
-<span class="pc bpc" id="L421" title="15 of 16 branches missed.">        return selectByExampleStatementEnabled</span>
+<span class="nc bnc" id="L421" title="All 16 branches missed.">        return selectByExampleStatementEnabled</span>
                 || selectByPrimaryKeyStatementEnabled || insertStatementEnabled
                 || updateByPrimaryKeyStatementEnabled
                 || deleteByExampleStatementEnabled
@@ -462,7 +462,7 @@ public class TableConfiguration extends PropertyHolder {
      * @return the catalog
      */
     public String getCatalog() {
-<span class="fc" id="L465">        return catalog;</span>
+<span class="nc" id="L465">        return catalog;</span>
     }
 
     /**
@@ -491,8 +491,8 @@ public class TableConfiguration extends PropertyHolder {
      *            the new domain object name
      */
     public void setDomainObjectName(String domainObjectName) {
-<span class="fc" id="L494">        this.domainObjectName = domainObjectName;</span>
-<span class="fc" id="L495">    }</span>
+<span class="nc" id="L494">        this.domainObjectName = domainObjectName;</span>
+<span class="nc" id="L495">    }</span>
 
     /**
      * Gets the schema.
@@ -500,7 +500,7 @@ public class TableConfiguration extends PropertyHolder {
      * @return the schema
      */
     public String getSchema() {
-<span class="fc" id="L503">        return schema;</span>
+<span class="nc" id="L503">        return schema;</span>
     }
 
     /**
@@ -519,7 +519,7 @@ public class TableConfiguration extends PropertyHolder {
      * @return the table name
      */
     public String getTableName() {
-<span class="fc" id="L522">        return tableName;</span>
+<span class="nc" id="L522">        return tableName;</span>
     }
 
     /**
@@ -529,8 +529,8 @@ public class TableConfiguration extends PropertyHolder {
      *            the new table name
      */
     public void setTableName(String tableName) {
-<span class="fc" id="L532">        this.tableName = tableName;</span>
-<span class="fc" id="L533">    }</span>
+<span class="nc" id="L532">        this.tableName = tableName;</span>
+<span class="nc" id="L533">    }</span>
 
     /**
      * Gets the column overrides.
@@ -588,7 +588,7 @@ public class TableConfiguration extends PropertyHolder {
      * @return true, if is wildcard escaping enabled
      */
     public boolean isWildcardEscapingEnabled() {
-<span class="fc" id="L591">        return wildcardEscapingEnabled;</span>
+<span class="nc" id="L591">        return wildcardEscapingEnabled;</span>
     }
 
     /**
@@ -740,7 +740,7 @@ public class TableConfiguration extends PropertyHolder {
      * @return true, if is delimit identifiers
      */
     public boolean isDelimitIdentifiers() {
-<span class="fc" id="L743">        return delimitIdentifiers;</span>
+<span class="nc" id="L743">        return delimitIdentifiers;</span>
     }
 
     /**
@@ -802,8 +802,8 @@ public class TableConfiguration extends PropertyHolder {
 
     public void setGxqptExtStatementEnabled(
             boolean gxqptExtStatementEnabled) {
-<span class="fc" id="L805">        this.gxqptExtStatementEnabled = gxqptExtStatementEnabled;</span>
-<span class="fc" id="L806">    }</span>
+<span class="nc" id="L805">        this.gxqptExtStatementEnabled = gxqptExtStatementEnabled;</span>
+<span class="nc" id="L806">    }</span>
     public void setGxqptAppIdEnabled(
             boolean gxqptAppIdEnabled) {
 <span class="nc" id="L809">        this.gxqptAppIdEnabled = gxqptAppIdEnabled;</span>
@@ -818,19 +818,19 @@ public class TableConfiguration extends PropertyHolder {
      *            the list position
      */
     public void validate(List&lt;String&gt; errors, int listPosition) {
-<span class="pc bpc" id="L821" title="1 of 2 branches missed.">        if (!stringHasValue(tableName)) {</span>
+<span class="nc bnc" id="L821" title="All 2 branches missed.">        if (!stringHasValue(tableName)) {</span>
 <span class="nc" id="L822">            errors.add(getString(</span>
 <span class="nc" id="L823">                    &quot;ValidationError.6&quot;, Integer.toString(listPosition))); //$NON-NLS-1$</span>
         }
 
-<span class="fc" id="L826">        String fqTableName = composeFullyQualifiedTableName(</span>
+<span class="nc" id="L826">        String fqTableName = composeFullyQualifiedTableName(</span>
                 catalog, schema, tableName, '.');
 
-<span class="pc bpc" id="L829" title="1 of 2 branches missed.">        if (generatedKey != null) {</span>
+<span class="nc bnc" id="L829" title="All 2 branches missed.">        if (generatedKey != null) {</span>
 <span class="nc" id="L830">            generatedKey.validate(errors, fqTableName);</span>
         }
 
-<span class="pc bpc" id="L833" title="1 of 2 branches missed.">        if (isTrue(getProperty(PropertyRegistry.TABLE_USE_COLUMN_INDEXES))) {</span>
+<span class="nc bnc" id="L833" title="All 2 branches missed.">        if (isTrue(getProperty(PropertyRegistry.TABLE_USE_COLUMN_INDEXES))) {</span>
             // when using column indexes, either both or neither query ids
             // should be set
 <span class="nc bnc" id="L836" title="All 4 branches missed.">            if (selectByExampleStatementEnabled</span>
@@ -845,18 +845,18 @@ public class TableConfiguration extends PropertyHolder {
             }
         }
 
-<span class="pc bpc" id="L848" title="1 of 2 branches missed.">        if (columnRenamingRule != null) {</span>
+<span class="nc bnc" id="L848" title="All 2 branches missed.">        if (columnRenamingRule != null) {</span>
 <span class="nc" id="L849">            columnRenamingRule.validate(errors, fqTableName);</span>
         }
 
-<span class="pc bpc" id="L852" title="1 of 2 branches missed.">        for (ColumnOverride columnOverride : columnOverrides) {</span>
+<span class="nc bnc" id="L852" title="All 2 branches missed.">        for (ColumnOverride columnOverride : columnOverrides) {</span>
 <span class="nc" id="L853">            columnOverride.validate(errors, fqTableName);</span>
 <span class="nc" id="L854">        }</span>
 
-<span class="pc bpc" id="L856" title="1 of 2 branches missed.">        for (IgnoredColumn ignoredColumn : ignoredColumns.keySet()) {</span>
+<span class="nc bnc" id="L856" title="All 2 branches missed.">        for (IgnoredColumn ignoredColumn : ignoredColumns.keySet()) {</span>
 <span class="nc" id="L857">            ignoredColumn.validate(errors, fqTableName);</span>
 <span class="nc" id="L858">        }</span>
-<span class="fc" id="L859">    }</span>
+<span class="nc" id="L859">    }</span>
 
     /**
      * Gets the column renaming rule.

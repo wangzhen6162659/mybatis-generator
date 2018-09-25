@@ -22,19 +22,19 @@ import static org.mybatis.generator.internal.util.messages.Messages.getString;
  * 
  * @author Jeff Butler
  */
-<span class="pc" id="L25">public enum ModelType {</span>
-<span class="fc" id="L26">    HIERARCHICAL(&quot;hierarchical&quot;), //$NON-NLS-1$</span>
-<span class="fc" id="L27">    FLAT(&quot;flat&quot;), //$NON-NLS-1$</span>
-<span class="fc" id="L28">    CONDITIONAL(&quot;conditional&quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L25">public enum ModelType {</span>
+<span class="nc" id="L26">    HIERARCHICAL(&quot;hierarchical&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L27">    FLAT(&quot;flat&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L28">    CONDITIONAL(&quot;conditional&quot;); //$NON-NLS-1$</span>
 
     private final String modelType;
 
     /**
      * 
      */
-<span class="fc" id="L35">    private ModelType(String modelType) {</span>
-<span class="fc" id="L36">        this.modelType = modelType;</span>
-<span class="fc" id="L37">    }</span>
+<span class="nc" id="L35">    private ModelType(String modelType) {</span>
+<span class="nc" id="L36">        this.modelType = modelType;</span>
+<span class="nc" id="L37">    }</span>
 
     public String getModelType() {
 <span class="nc" id="L40">        return modelType;</span>

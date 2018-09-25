@@ -34,25 +34,25 @@ public class FullyQualifiedJavaType implements
     private static final String JAVA_LANG = &quot;java.lang&quot;; //$NON-NLS-1$
     
     /** The int instance. */
-<span class="fc" id="L37">    private static FullyQualifiedJavaType intInstance = null;</span>
+<span class="nc" id="L37">    private static FullyQualifiedJavaType intInstance = null;</span>
     
     /** The string instance. */
-<span class="fc" id="L40">    private static FullyQualifiedJavaType stringInstance = null;</span>
+<span class="nc" id="L40">    private static FullyQualifiedJavaType stringInstance = null;</span>
     
     /** The boolean primitive instance. */
-<span class="fc" id="L43">    private static FullyQualifiedJavaType booleanPrimitiveInstance = null;</span>
+<span class="nc" id="L43">    private static FullyQualifiedJavaType booleanPrimitiveInstance = null;</span>
     
     /** The object instance. */
-<span class="fc" id="L46">    private static FullyQualifiedJavaType objectInstance = null;</span>
+<span class="nc" id="L46">    private static FullyQualifiedJavaType objectInstance = null;</span>
     
     /** The date instance. */
-<span class="fc" id="L49">    private static FullyQualifiedJavaType dateInstance = null;</span>
+<span class="nc" id="L49">    private static FullyQualifiedJavaType dateInstance = null;</span>
     
     /** The criteria instance. */
-<span class="fc" id="L52">    private static FullyQualifiedJavaType criteriaInstance = null;</span>
+<span class="nc" id="L52">    private static FullyQualifiedJavaType criteriaInstance = null;</span>
     
     /** The generated criteria instance. */
-<span class="fc" id="L55">    private static FullyQualifiedJavaType generatedCriteriaInstance = null;</span>
+<span class="nc" id="L55">    private static FullyQualifiedJavaType generatedCriteriaInstance = null;</span>
 
     /** The short name without any generic arguments. */
     private String baseShortName;
@@ -95,10 +95,10 @@ public class FullyQualifiedJavaType implements
      *            the full type specification
      */
     public FullyQualifiedJavaType(String fullTypeSpecification) {
-<span class="fc" id="L98">        super();</span>
-<span class="fc" id="L99">        typeArguments = new ArrayList&lt;FullyQualifiedJavaType&gt;();</span>
-<span class="fc" id="L100">        parse(fullTypeSpecification);</span>
-<span class="fc" id="L101">    }</span>
+<span class="nc" id="L98">        super();</span>
+<span class="nc" id="L99">        typeArguments = new ArrayList&lt;FullyQualifiedJavaType&gt;();</span>
+<span class="nc" id="L100">        parse(fullTypeSpecification);</span>
+<span class="nc" id="L101">    }</span>
 
     /**
      * Checks if is explicitly imported.
@@ -458,9 +458,9 @@ public class FullyQualifiedJavaType implements
      *            the full type specification
      */
     private void parse(String fullTypeSpecification) {
-<span class="fc" id="L461">        String spec = fullTypeSpecification.trim();</span>
+<span class="nc" id="L461">        String spec = fullTypeSpecification.trim();</span>
 
-<span class="pc bpc" id="L463" title="1 of 2 branches missed.">        if (spec.startsWith(&quot;?&quot;)) { //$NON-NLS-1$</span>
+<span class="nc bnc" id="L463" title="All 2 branches missed.">        if (spec.startsWith(&quot;?&quot;)) { //$NON-NLS-1$</span>
 <span class="nc" id="L464">            wildcardType = true;</span>
 <span class="nc" id="L465">            spec = spec.substring(1).trim();</span>
 <span class="nc bnc" id="L466" title="All 2 branches missed.">            if (spec.startsWith(&quot;extends &quot;)) { //$NON-NLS-1$</span>
@@ -476,9 +476,9 @@ public class FullyQualifiedJavaType implements
             }
 <span class="nc" id="L477">            parse(spec);</span>
         } else {
-<span class="fc" id="L479">            int index = fullTypeSpecification.indexOf('&lt;');</span>
-<span class="pc bpc" id="L480" title="1 of 2 branches missed.">            if (index == -1) {</span>
-<span class="fc" id="L481">                simpleParse(fullTypeSpecification);</span>
+<span class="nc" id="L479">            int index = fullTypeSpecification.indexOf('&lt;');</span>
+<span class="nc bnc" id="L480" title="All 2 branches missed.">            if (index == -1) {</span>
+<span class="nc" id="L481">                simpleParse(fullTypeSpecification);</span>
             } else {
 <span class="nc" id="L483">                simpleParse(fullTypeSpecification.substring(0, index));</span>
 <span class="nc" id="L484">                int endIndex = fullTypeSpecification.lastIndexOf('&gt;');</span>
@@ -493,9 +493,9 @@ public class FullyQualifiedJavaType implements
             // enough for most cases.  It will not detect an improperly specified
             // array type like byte], but it will detect byte[] and byte[   ]
             // which are both valid
-<span class="fc" id="L496">            isArray = fullTypeSpecification.endsWith(&quot;]&quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L496">            isArray = fullTypeSpecification.endsWith(&quot;]&quot;); //$NON-NLS-1$</span>
         }
-<span class="fc" id="L498">    }</span>
+<span class="nc" id="L498">    }</span>
 
     /**
      * Simple parse.
@@ -504,59 +504,59 @@ public class FullyQualifiedJavaType implements
      *            the type specification
      */
     private void simpleParse(String typeSpecification) {
-<span class="fc" id="L507">        baseQualifiedName = typeSpecification.trim();</span>
-<span class="fc bfc" id="L508" title="All 2 branches covered.">        if (baseQualifiedName.contains(&quot;.&quot;)) { //$NON-NLS-1$</span>
-<span class="fc" id="L509">            packageName = getPackage(baseQualifiedName);</span>
-<span class="fc" id="L510">            baseShortName = baseQualifiedName</span>
-<span class="fc" id="L511">                    .substring(packageName.length() + 1);</span>
-<span class="fc" id="L512">            int index = baseShortName.lastIndexOf('.');</span>
-<span class="pc bpc" id="L513" title="1 of 2 branches missed.">            if (index != -1) {</span>
+<span class="nc" id="L507">        baseQualifiedName = typeSpecification.trim();</span>
+<span class="nc bnc" id="L508" title="All 2 branches missed.">        if (baseQualifiedName.contains(&quot;.&quot;)) { //$NON-NLS-1$</span>
+<span class="nc" id="L509">            packageName = getPackage(baseQualifiedName);</span>
+<span class="nc" id="L510">            baseShortName = baseQualifiedName</span>
+<span class="nc" id="L511">                    .substring(packageName.length() + 1);</span>
+<span class="nc" id="L512">            int index = baseShortName.lastIndexOf('.');</span>
+<span class="nc bnc" id="L513" title="All 2 branches missed.">            if (index != -1) {</span>
 <span class="nc" id="L514">                baseShortName = baseShortName.substring(index + 1);</span>
             }
             
-<span class="fc bfc" id="L517" title="All 2 branches covered.">            if (JAVA_LANG.equals(packageName)) { //$NON-NLS-1$</span>
-<span class="fc" id="L518">                explicitlyImported = false;</span>
+<span class="nc bnc" id="L517" title="All 2 branches missed.">            if (JAVA_LANG.equals(packageName)) { //$NON-NLS-1$</span>
+<span class="nc" id="L518">                explicitlyImported = false;</span>
             } else {
-<span class="fc" id="L520">                explicitlyImported = true;</span>
+<span class="nc" id="L520">                explicitlyImported = true;</span>
             }
-<span class="fc" id="L522">        } else {</span>
-<span class="fc" id="L523">            baseShortName = baseQualifiedName;</span>
-<span class="fc" id="L524">            explicitlyImported = false;</span>
-<span class="fc" id="L525">            packageName = &quot;&quot;; //$NON-NLS-1$</span>
+<span class="nc" id="L522">        } else {</span>
+<span class="nc" id="L523">            baseShortName = baseQualifiedName;</span>
+<span class="nc" id="L524">            explicitlyImported = false;</span>
+<span class="nc" id="L525">            packageName = &quot;&quot;; //$NON-NLS-1$</span>
 
-<span class="pc bpc" id="L527" title="1 of 2 branches missed.">            if (&quot;byte&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
+<span class="nc bnc" id="L527" title="All 2 branches missed.">            if (&quot;byte&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
 <span class="nc" id="L528">                primitive = true;</span>
 <span class="nc" id="L529">                primitiveTypeWrapper = PrimitiveTypeWrapper.getByteInstance();</span>
-<span class="pc bpc" id="L530" title="1 of 2 branches missed.">            } else if (&quot;short&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
+<span class="nc bnc" id="L530" title="All 2 branches missed.">            } else if (&quot;short&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
 <span class="nc" id="L531">                primitive = true;</span>
 <span class="nc" id="L532">                primitiveTypeWrapper = PrimitiveTypeWrapper.getShortInstance();</span>
-<span class="pc bpc" id="L533" title="1 of 2 branches missed.">            } else if (&quot;int&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
+<span class="nc bnc" id="L533" title="All 2 branches missed.">            } else if (&quot;int&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
 <span class="nc" id="L534">                primitive = true;</span>
 <span class="nc" id="L535">                primitiveTypeWrapper = PrimitiveTypeWrapper</span>
 <span class="nc" id="L536">                        .getIntegerInstance();</span>
-<span class="pc bpc" id="L537" title="1 of 2 branches missed.">            } else if (&quot;long&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
+<span class="nc bnc" id="L537" title="All 2 branches missed.">            } else if (&quot;long&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
 <span class="nc" id="L538">                primitive = true;</span>
 <span class="nc" id="L539">                primitiveTypeWrapper = PrimitiveTypeWrapper.getLongInstance();</span>
-<span class="pc bpc" id="L540" title="1 of 2 branches missed.">            } else if (&quot;char&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
+<span class="nc bnc" id="L540" title="All 2 branches missed.">            } else if (&quot;char&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
 <span class="nc" id="L541">                primitive = true;</span>
 <span class="nc" id="L542">                primitiveTypeWrapper = PrimitiveTypeWrapper</span>
 <span class="nc" id="L543">                        .getCharacterInstance();</span>
-<span class="pc bpc" id="L544" title="1 of 2 branches missed.">            } else if (&quot;float&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
+<span class="nc bnc" id="L544" title="All 2 branches missed.">            } else if (&quot;float&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
 <span class="nc" id="L545">                primitive = true;</span>
 <span class="nc" id="L546">                primitiveTypeWrapper = PrimitiveTypeWrapper.getFloatInstance();</span>
-<span class="pc bpc" id="L547" title="1 of 2 branches missed.">            } else if (&quot;double&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
+<span class="nc bnc" id="L547" title="All 2 branches missed.">            } else if (&quot;double&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
 <span class="nc" id="L548">                primitive = true;</span>
 <span class="nc" id="L549">                primitiveTypeWrapper = PrimitiveTypeWrapper.getDoubleInstance();</span>
-<span class="pc bpc" id="L550" title="1 of 2 branches missed.">            } else if (&quot;boolean&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
+<span class="nc bnc" id="L550" title="All 2 branches missed.">            } else if (&quot;boolean&quot;.equals(baseQualifiedName)) { //$NON-NLS-1$</span>
 <span class="nc" id="L551">                primitive = true;</span>
 <span class="nc" id="L552">                primitiveTypeWrapper = PrimitiveTypeWrapper</span>
 <span class="nc" id="L553">                        .getBooleanInstance();</span>
             } else {
-<span class="fc" id="L555">                primitive = false;</span>
-<span class="fc" id="L556">                primitiveTypeWrapper = null;</span>
+<span class="nc" id="L555">                primitive = false;</span>
+<span class="nc" id="L556">                primitiveTypeWrapper = null;</span>
             }
         }
-<span class="fc" id="L559">    }</span>
+<span class="nc" id="L559">    }</span>
 
     /**
      * Generic parse.
@@ -620,8 +620,8 @@ public class FullyQualifiedJavaType implements
      * @return the package
      */
     private static String getPackage(String baseQualifiedName) {
-<span class="fc" id="L623">        int index = baseQualifiedName.lastIndexOf('.');</span>
-<span class="fc" id="L624">        return baseQualifiedName.substring(0, index);</span>
+<span class="nc" id="L623">        int index = baseQualifiedName.lastIndexOf('.');</span>
+<span class="nc" id="L624">        return baseQualifiedName.substring(0, index);</span>
     }
 
     /**

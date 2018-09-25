@@ -47,13 +47,13 @@ import org.mybatis.generator.config.Context;
 public final class PluginAggregator implements Plugin {
     private List&lt;Plugin&gt; plugins;
 
-<span class="fc" id="L50">    public PluginAggregator() {</span>
-<span class="fc" id="L51">        plugins = new ArrayList&lt;Plugin&gt;();</span>
-<span class="fc" id="L52">    }</span>
+<span class="nc" id="L50">    public PluginAggregator() {</span>
+<span class="nc" id="L51">        plugins = new ArrayList&lt;Plugin&gt;();</span>
+<span class="nc" id="L52">    }</span>
 
     public void addPlugin(Plugin plugin) {
-<span class="fc" id="L55">        plugins.add(plugin);</span>
-<span class="fc" id="L56">    }</span>
+<span class="nc" id="L55">        plugins.add(plugin);</span>
+<span class="nc" id="L56">    }</span>
 
     public void setContext(Context context) {
 <span class="nc" id="L59">        throw new UnsupportedOperationException();</span>
@@ -840,27 +840,27 @@ public final class PluginAggregator implements Plugin {
     }
 
     public List&lt;GeneratedJavaFile&gt; contextGenerateAdditionalJavaFiles() {
-<span class="fc" id="L843">        List&lt;GeneratedJavaFile&gt; answer = new ArrayList&lt;GeneratedJavaFile&gt;();</span>
-<span class="fc bfc" id="L844" title="All 2 branches covered.">        for (Plugin plugin : plugins) {</span>
-<span class="fc" id="L845">            List&lt;GeneratedJavaFile&gt; temp = plugin</span>
-<span class="fc" id="L846">                    .contextGenerateAdditionalJavaFiles();</span>
-<span class="pc bpc" id="L847" title="1 of 2 branches missed.">            if (temp != null) {</span>
+<span class="nc" id="L843">        List&lt;GeneratedJavaFile&gt; answer = new ArrayList&lt;GeneratedJavaFile&gt;();</span>
+<span class="nc bnc" id="L844" title="All 2 branches missed.">        for (Plugin plugin : plugins) {</span>
+<span class="nc" id="L845">            List&lt;GeneratedJavaFile&gt; temp = plugin</span>
+<span class="nc" id="L846">                    .contextGenerateAdditionalJavaFiles();</span>
+<span class="nc bnc" id="L847" title="All 2 branches missed.">            if (temp != null) {</span>
 <span class="nc" id="L848">                answer.addAll(temp);</span>
             }
-<span class="fc" id="L850">        }</span>
-<span class="fc" id="L851">        return answer;</span>
+<span class="nc" id="L850">        }</span>
+<span class="nc" id="L851">        return answer;</span>
     }
 
     public List&lt;GeneratedXmlFile&gt; contextGenerateAdditionalXmlFiles() {
-<span class="fc" id="L855">        List&lt;GeneratedXmlFile&gt; answer = new ArrayList&lt;GeneratedXmlFile&gt;();</span>
-<span class="fc bfc" id="L856" title="All 2 branches covered.">        for (Plugin plugin : plugins) {</span>
-<span class="fc" id="L857">            List&lt;GeneratedXmlFile&gt; temp = plugin</span>
-<span class="fc" id="L858">                    .contextGenerateAdditionalXmlFiles();</span>
-<span class="pc bpc" id="L859" title="1 of 2 branches missed.">            if (temp != null) {</span>
+<span class="nc" id="L855">        List&lt;GeneratedXmlFile&gt; answer = new ArrayList&lt;GeneratedXmlFile&gt;();</span>
+<span class="nc bnc" id="L856" title="All 2 branches missed.">        for (Plugin plugin : plugins) {</span>
+<span class="nc" id="L857">            List&lt;GeneratedXmlFile&gt; temp = plugin</span>
+<span class="nc" id="L858">                    .contextGenerateAdditionalXmlFiles();</span>
+<span class="nc bnc" id="L859" title="All 2 branches missed.">            if (temp != null) {</span>
 <span class="nc" id="L860">                answer.addAll(temp);</span>
             }
-<span class="fc" id="L862">        }</span>
-<span class="fc" id="L863">        return answer;</span>
+<span class="nc" id="L862">        }</span>
+<span class="nc" id="L863">        return answer;</span>
     }
 
     public boolean sqlMapDocumentGenerated(Document document,

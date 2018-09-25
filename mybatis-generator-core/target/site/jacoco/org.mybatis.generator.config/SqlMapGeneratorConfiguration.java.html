@@ -35,24 +35,24 @@ public class SqlMapGeneratorConfiguration extends PropertyHolder {
 	 *  
 	 */
     public SqlMapGeneratorConfiguration() {
-<span class="fc" id="L38">        super();</span>
-<span class="fc" id="L39">    }</span>
+<span class="nc" id="L38">        super();</span>
+<span class="nc" id="L39">    }</span>
 
     public String getTargetProject() {
 <span class="nc" id="L42">        return targetProject;</span>
     }
 
     public void setTargetProject(String targetProject) {
-<span class="fc" id="L46">        this.targetProject = targetProject;</span>
-<span class="fc" id="L47">    }</span>
+<span class="nc" id="L46">        this.targetProject = targetProject;</span>
+<span class="nc" id="L47">    }</span>
 
     public String getTargetPackage() {
 <span class="nc" id="L50">        return targetPackage;</span>
     }
 
     public void setTargetPackage(String targetPackage) {
-<span class="fc" id="L54">        this.targetPackage = targetPackage;</span>
-<span class="fc" id="L55">    }</span>
+<span class="nc" id="L54">        this.targetPackage = targetPackage;</span>
+<span class="nc" id="L55">    }</span>
 
     public XmlElement toXmlElement() {
 <span class="nc" id="L58">        XmlElement answer = new XmlElement(&quot;sqlMapGenerator&quot;); //$NON-NLS-1$</span>
@@ -71,14 +71,14 @@ public class SqlMapGeneratorConfiguration extends PropertyHolder {
     }
 
     public void validate(List&lt;String&gt; errors, String contextId) {
-<span class="pc bpc" id="L74" title="1 of 2 branches missed.">        if (!stringHasValue(targetProject)) {</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        if (!stringHasValue(targetProject)) {</span>
 <span class="nc" id="L75">            errors.add(getString(&quot;ValidationError.1&quot;, contextId)); //$NON-NLS-1$</span>
         }
 
-<span class="pc bpc" id="L78" title="1 of 2 branches missed.">        if (!stringHasValue(targetPackage)) {</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">        if (!stringHasValue(targetPackage)) {</span>
 <span class="nc" id="L79">            errors.add(getString(&quot;ValidationError.12&quot;, //$NON-NLS-1$</span>
                     &quot;SQLMapGenerator&quot;, contextId)); //$NON-NLS-1$
         }
-<span class="fc" id="L82">    }</span>
+<span class="nc" id="L82">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

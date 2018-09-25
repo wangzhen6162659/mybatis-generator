@@ -89,13 +89,13 @@ public class DatabaseIntrospector {
     public DatabaseIntrospector(Context context,
             DatabaseMetaData databaseMetaData,
             JavaTypeResolver javaTypeResolver, List&lt;String&gt; warnings) {
-<span class="fc" id="L92">        super();</span>
-<span class="fc" id="L93">        this.context = context;</span>
-<span class="fc" id="L94">        this.databaseMetaData = databaseMetaData;</span>
-<span class="fc" id="L95">        this.javaTypeResolver = javaTypeResolver;</span>
-<span class="fc" id="L96">        this.warnings = warnings;</span>
-<span class="fc" id="L97">        logger = LogFactory.getLog(getClass());</span>
-<span class="fc" id="L98">    }</span>
+<span class="nc" id="L92">        super();</span>
+<span class="nc" id="L93">        this.context = context;</span>
+<span class="nc" id="L94">        this.databaseMetaData = databaseMetaData;</span>
+<span class="nc" id="L95">        this.javaTypeResolver = javaTypeResolver;</span>
+<span class="nc" id="L96">        this.warnings = warnings;</span>
+<span class="nc" id="L97">        logger = LogFactory.getLog(getClass());</span>
+<span class="nc" id="L98">    }</span>
 
     /**
      * Calculate primary key.
@@ -146,15 +146,15 @@ public class DatabaseIntrospector {
      *            the rs
      */
     private void closeResultSet(ResultSet rs) {
-<span class="pc bpc" id="L149" title="1 of 2 branches missed.">        if (rs != null) {</span>
+<span class="nc bnc" id="L149" title="All 2 branches missed.">        if (rs != null) {</span>
             try {
-<span class="fc" id="L151">                rs.close();</span>
+<span class="nc" id="L151">                rs.close();</span>
 <span class="nc" id="L152">            } catch (SQLException e) {</span>
                 // ignore
                 ;
-<span class="fc" id="L155">            }</span>
+<span class="nc" id="L155">            }</span>
         }
-<span class="fc" id="L157">    }</span>
+<span class="nc" id="L157">    }</span>
 
     /**
      * Report introspection warnings.
@@ -219,12 +219,12 @@ public class DatabaseIntrospector {
             throws SQLException {
 
         // get the raw columns from the DB
-<span class="fc" id="L222">        Map&lt;ActualTableName, List&lt;IntrospectedColumn&gt;&gt; columns = getColumns(tc);</span>
+<span class="nc" id="L222">        Map&lt;ActualTableName, List&lt;IntrospectedColumn&gt;&gt; columns = getColumns(tc);</span>
 
-<span class="pc bpc" id="L224" title="1 of 2 branches missed.">        if (columns.isEmpty()) {</span>
-<span class="fc" id="L225">            warnings.add(getString(&quot;Warning.19&quot;, tc.getCatalog(), //$NON-NLS-1$</span>
-<span class="fc" id="L226">                    tc.getSchema(), tc.getTableName()));</span>
-<span class="fc" id="L227">            return null;</span>
+<span class="nc bnc" id="L224" title="All 2 branches missed.">        if (columns.isEmpty()) {</span>
+<span class="nc" id="L225">            warnings.add(getString(&quot;Warning.19&quot;, tc.getCatalog(), //$NON-NLS-1$</span>
+<span class="nc" id="L226">                    tc.getSchema(), tc.getTableName()));</span>
+<span class="nc" id="L227">            return null;</span>
         }
 
 <span class="nc" id="L230">        removeIgnoredColumns(tc, columns);</span>
@@ -530,22 +530,22 @@ public class DatabaseIntrospector {
         String localSchema;
         String localTableName;
 
-<span class="pc bpc" id="L533" title="1 of 2 branches missed.">        boolean delimitIdentifiers = tc.isDelimitIdentifiers()</span>
-<span class="pc bpc" id="L534" title="1 of 2 branches missed.">                || stringContainsSpace(tc.getCatalog())</span>
-<span class="pc bpc" id="L535" title="1 of 2 branches missed.">                || stringContainsSpace(tc.getSchema())</span>
-<span class="pc bpc" id="L536" title="1 of 2 branches missed.">                || stringContainsSpace(tc.getTableName());</span>
+<span class="nc bnc" id="L533" title="All 2 branches missed.">        boolean delimitIdentifiers = tc.isDelimitIdentifiers()</span>
+<span class="nc bnc" id="L534" title="All 2 branches missed.">                || stringContainsSpace(tc.getCatalog())</span>
+<span class="nc bnc" id="L535" title="All 2 branches missed.">                || stringContainsSpace(tc.getSchema())</span>
+<span class="nc bnc" id="L536" title="All 2 branches missed.">                || stringContainsSpace(tc.getTableName());</span>
 
-<span class="pc bpc" id="L538" title="1 of 2 branches missed.">        if (delimitIdentifiers) {</span>
+<span class="nc bnc" id="L538" title="All 2 branches missed.">        if (delimitIdentifiers) {</span>
 <span class="nc" id="L539">            localCatalog = tc.getCatalog();</span>
 <span class="nc" id="L540">            localSchema = tc.getSchema();</span>
 <span class="nc" id="L541">            localTableName = tc.getTableName();</span>
-<span class="pc bpc" id="L542" title="1 of 2 branches missed.">        } else if (databaseMetaData.storesLowerCaseIdentifiers()) {</span>
-<span class="pc bpc" id="L543" title="1 of 2 branches missed.">            localCatalog = tc.getCatalog() == null ? null : tc.getCatalog()</span>
-<span class="pc" id="L544">                    .toLowerCase();</span>
-<span class="pc bpc" id="L545" title="1 of 2 branches missed.">            localSchema = tc.getSchema() == null ? null : tc.getSchema()</span>
-<span class="pc" id="L546">                    .toLowerCase();</span>
-<span class="pc bpc" id="L547" title="1 of 2 branches missed.">            localTableName = tc.getTableName() == null ? null : tc</span>
-<span class="fc" id="L548">                    .getTableName().toLowerCase();</span>
+<span class="nc bnc" id="L542" title="All 2 branches missed.">        } else if (databaseMetaData.storesLowerCaseIdentifiers()) {</span>
+<span class="nc bnc" id="L543" title="All 2 branches missed.">            localCatalog = tc.getCatalog() == null ? null : tc.getCatalog()</span>
+<span class="nc" id="L544">                    .toLowerCase();</span>
+<span class="nc bnc" id="L545" title="All 2 branches missed.">            localSchema = tc.getSchema() == null ? null : tc.getSchema()</span>
+<span class="nc" id="L546">                    .toLowerCase();</span>
+<span class="nc bnc" id="L547" title="All 2 branches missed.">            localTableName = tc.getTableName() == null ? null : tc</span>
+<span class="nc" id="L548">                    .getTableName().toLowerCase();</span>
 <span class="nc bnc" id="L549" title="All 2 branches missed.">        } else if (databaseMetaData.storesUpperCaseIdentifiers()) {</span>
 <span class="nc bnc" id="L550" title="All 2 branches missed.">            localCatalog = tc.getCatalog() == null ? null : tc.getCatalog()</span>
 <span class="nc" id="L551">                    .toUpperCase();</span>
@@ -559,7 +559,7 @@ public class DatabaseIntrospector {
 <span class="nc" id="L559">            localTableName = tc.getTableName();</span>
         }
 
-<span class="pc bpc" id="L562" title="1 of 2 branches missed.">        if (tc.isWildcardEscapingEnabled()) {</span>
+<span class="nc bnc" id="L562" title="All 2 branches missed.">        if (tc.isWildcardEscapingEnabled()) {</span>
 <span class="nc" id="L563">            String escapeString = databaseMetaData.getSearchStringEscape();</span>
 
 <span class="nc" id="L565">            StringBuilder sb = new StringBuilder();</span>
@@ -590,18 +590,18 @@ public class DatabaseIntrospector {
 <span class="nc" id="L590">            localTableName = sb.toString();</span>
         }
 
-<span class="fc" id="L593">        Map&lt;ActualTableName, List&lt;IntrospectedColumn&gt;&gt; answer = new HashMap&lt;ActualTableName, List&lt;IntrospectedColumn&gt;&gt;();</span>
+<span class="nc" id="L593">        Map&lt;ActualTableName, List&lt;IntrospectedColumn&gt;&gt; answer = new HashMap&lt;ActualTableName, List&lt;IntrospectedColumn&gt;&gt;();</span>
 
-<span class="pc bpc" id="L595" title="1 of 2 branches missed.">        if (logger.isDebugEnabled()) {</span>
+<span class="nc bnc" id="L595" title="All 2 branches missed.">        if (logger.isDebugEnabled()) {</span>
 <span class="nc" id="L596">            String fullTableName = composeFullyQualifiedTableName(localCatalog, localSchema,</span>
                             localTableName, '.');
 <span class="nc" id="L598">            logger.debug(getString(&quot;Tracing.1&quot;, fullTableName)); //$NON-NLS-1$</span>
         }
 
-<span class="fc" id="L601">        ResultSet rs = databaseMetaData.getColumns(localCatalog, localSchema,</span>
+<span class="nc" id="L601">        ResultSet rs = databaseMetaData.getColumns(localCatalog, localSchema,</span>
                 localTableName, null);
 
-<span class="pc bpc" id="L604" title="1 of 2 branches missed.">        while (rs.next()) {</span>
+<span class="nc bnc" id="L604" title="All 2 branches missed.">        while (rs.next()) {</span>
 <span class="nc" id="L605">            IntrospectedColumn introspectedColumn = ObjectFactory</span>
 <span class="nc" id="L606">                    .createIntrospectedColumn(context);</span>
 
@@ -637,9 +637,9 @@ public class DatabaseIntrospector {
             }
 <span class="nc" id="L638">        }</span>
 
-<span class="fc" id="L640">        closeResultSet(rs);</span>
+<span class="nc" id="L640">        closeResultSet(rs);</span>
 
-<span class="pc bpc" id="L642" title="1 of 2 branches missed.">        if (answer.size() &gt; 1</span>
+<span class="nc bnc" id="L642" title="All 2 branches missed.">        if (answer.size() &gt; 1</span>
 <span class="nc bnc" id="L643" title="All 2 branches missed.">                &amp;&amp; !stringContainsSQLWildcard(localSchema)</span>
 <span class="nc bnc" id="L644" title="All 2 branches missed.">                &amp;&amp; !stringContainsSQLWildcard(localTableName)) {</span>
             // issue a warning if there is more than one table and
@@ -662,7 +662,7 @@ public class DatabaseIntrospector {
 <span class="nc" id="L662">                    inputAtn.toString(), sb.toString()));</span>
         }
 
-<span class="fc" id="L665">        return answer;</span>
+<span class="nc" id="L665">        return answer;</span>
     }
 
     /**

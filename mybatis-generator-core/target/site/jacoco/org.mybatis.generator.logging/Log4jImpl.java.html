@@ -26,12 +26,12 @@ public class Log4jImpl implements Log {
 
     private Logger log;
 
-<span class="fc" id="L29">    public Log4jImpl(Class&lt;?&gt; clazz) {</span>
-<span class="fc" id="L30">        log = Logger.getLogger(clazz);</span>
-<span class="fc" id="L31">    }</span>
+<span class="nc" id="L29">    public Log4jImpl(Class&lt;?&gt; clazz) {</span>
+<span class="nc" id="L30">        log = Logger.getLogger(clazz);</span>
+<span class="nc" id="L31">    }</span>
 
     public boolean isDebugEnabled() {
-<span class="fc" id="L34">        return log.isDebugEnabled();</span>
+<span class="nc" id="L34">        return log.isDebugEnabled();</span>
     }
 
     public void error(String s, Throwable e) {

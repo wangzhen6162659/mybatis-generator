@@ -31,16 +31,16 @@ import org.mybatis.generator.internal.ObjectFactory;
 
     static {
         try {
-<span class="fc" id="L34">            ObjectFactory.internalClassForName(&quot;org.apache.log4j.Logger&quot;); //$NON-NLS-1$</span>
-<span class="fc" id="L35">            logFactory = new Log4jLoggingLogFactory();</span>
+<span class="nc" id="L34">            ObjectFactory.internalClassForName(&quot;org.apache.log4j.Logger&quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L35">            logFactory = new Log4jLoggingLogFactory();</span>
 <span class="nc" id="L36">        } catch (Exception e) {</span>
 <span class="nc" id="L37">            logFactory = new JdkLoggingLogFactory();</span>
-<span class="fc" id="L38">        }</span>
-<span class="fc" id="L39">    }</span>
+<span class="nc" id="L38">        }</span>
+<span class="nc" id="L39">    }</span>
 
     public static Log getLog(Class&lt;?&gt; clazz) {
         try {
-<span class="fc" id="L43">            return logFactory.getLog(clazz);</span>
+<span class="nc" id="L43">            return logFactory.getLog(clazz);</span>
 <span class="nc" id="L44">        } catch (Throwable t) {</span>
 <span class="nc" id="L45">            throw new RuntimeException(getString(&quot;RuntimeError.21&quot;, //$NON-NLS-1$</span>
 <span class="nc" id="L46">                    clazz.getName(), t.getMessage()), t);</span>
@@ -65,9 +65,9 @@ import org.mybatis.generator.internal.ObjectFactory;
         }
     }
 
-<span class="fc" id="L68">    private static class Log4jLoggingLogFactory implements AbstractLogFactory {</span>
+<span class="nc" id="L68">    private static class Log4jLoggingLogFactory implements AbstractLogFactory {</span>
         public Log getLog(Class&lt;?&gt; clazz) {
-<span class="fc" id="L70">            return new Log4jImpl(clazz);</span>
+<span class="nc" id="L70">            return new Log4jImpl(clazz);</span>
         }
     }
 

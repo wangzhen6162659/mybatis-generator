@@ -29,8 +29,8 @@ import org.mybatis.generator.api.dom.xml.XmlElement;
  * 
  */
 public class PluginConfiguration extends TypedPropertyHolder {
-<span class="fc" id="L32">    public PluginConfiguration() {</span>
-<span class="fc" id="L33">    }</span>
+<span class="nc" id="L32">    public PluginConfiguration() {</span>
+<span class="nc" id="L33">    }</span>
 
     public XmlElement toXmlElement() {
 <span class="nc" id="L36">        XmlElement answer = new XmlElement(&quot;plugin&quot;); //$NON-NLS-1$</span>
@@ -44,10 +44,10 @@ public class PluginConfiguration extends TypedPropertyHolder {
     }
 
     public void validate(List&lt;String&gt; errors, String contextId) {
-<span class="pc bpc" id="L47" title="1 of 2 branches missed.">        if (!stringHasValue(getConfigurationType())) {</span>
+<span class="nc bnc" id="L47" title="All 2 branches missed.">        if (!stringHasValue(getConfigurationType())) {</span>
 <span class="nc" id="L48">            errors.add(getString(&quot;ValidationError.17&quot;, //$NON-NLS-1$</span>
                     contextId));
         }
-<span class="fc" id="L51">    }</span>
+<span class="nc" id="L51">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

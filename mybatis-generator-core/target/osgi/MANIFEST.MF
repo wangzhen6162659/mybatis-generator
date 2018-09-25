@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1532156626564
+Bnd-LastModified: 1537854036553
 Build-Jdk: 1.8.0_161
 Built-By: Administrator
 Bundle-Description: The MyBatis parent POM.
@@ -12,7 +12,7 @@ Bundle-SymbolicName: com.notex.mybatis-generator-core
 Bundle-Vendor: MyBatis.org
 Bundle-Version: 1.0.0.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
-Implementation-Build-Date: 2018-07-21 07:03:42+0000
+Implementation-Build-Date: 2018-09-25 05:40:29+0000
 Implementation-Title: MyBatis Generator Core
 Implementation-Vendor: MyBatis.org
 Implementation-Vendor-Id: com.notex
@@ -46,10 +46,10 @@ Private-Package: org.mybatis.generator.ant,org.mybatis.generator.api,org
  nerator.internal.rules,org.mybatis.generator.internal.types,org.mybatis
  .generator.internal.util,org.mybatis.generator.internal.util.messages,o
  rg.mybatis.generator.logging,org.mybatis.generator.plugins
-Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
 Specification-Title: MyBatis Generator Core
 Specification-Vendor: MyBatis.org
 Specification-Version: 1.0-SNAPSHOT
 Tool: Bnd-2.4.1.201501161923
-X-Compile-Source-JDK: 1.7
-X-Compile-Target-JDK: 1.7
+X-Compile-Source-JDK: 1.8
+X-Compile-Target-JDK: 1.8

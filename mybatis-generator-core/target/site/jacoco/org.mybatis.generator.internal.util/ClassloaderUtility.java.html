@@ -39,33 +39,33 @@ public class ClassloaderUtility {
 <span class="nc" id="L39">    }</span>
 
     public static ClassLoader getCustomClassloader(List&lt;String&gt; entries) {
-<span class="fc" id="L42">        List&lt;URL&gt; urls = new ArrayList&lt;URL&gt;();</span>
+<span class="nc" id="L42">        List&lt;URL&gt; urls = new ArrayList&lt;URL&gt;();</span>
         File file;
 
-<span class="pc bpc" id="L45" title="1 of 2 branches missed.">        if (entries != null) {</span>
-<span class="fc bfc" id="L46" title="All 2 branches covered.">            for (String classPathEntry : entries) {</span>
-<span class="fc" id="L47">                file = new File(classPathEntry);</span>
-<span class="fc bfc" id="L48" title="All 2 branches covered.">                if (!file.exists()) {</span>
-<span class="fc" id="L49">                    throw new RuntimeException(getString(</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">        if (entries != null) {</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">            for (String classPathEntry : entries) {</span>
+<span class="nc" id="L47">                file = new File(classPathEntry);</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">                if (!file.exists()) {</span>
+<span class="nc" id="L49">                    throw new RuntimeException(getString(</span>
                             &quot;RuntimeError.9&quot;, classPathEntry)); //$NON-NLS-1$
                 }
 
                 try {
-<span class="fc" id="L54">                    urls.add(file.toURI().toURL());</span>
+<span class="nc" id="L54">                    urls.add(file.toURI().toURL());</span>
 <span class="nc" id="L55">                } catch (MalformedURLException e) {</span>
                     // this shouldn't happen, but just in case...
 <span class="nc" id="L57">                    throw new RuntimeException(getString(</span>
                             &quot;RuntimeError.9&quot;, classPathEntry)); //$NON-NLS-1$
-<span class="fc" id="L59">                }</span>
-<span class="fc" id="L60">            }</span>
+<span class="nc" id="L59">                }</span>
+<span class="nc" id="L60">            }</span>
         }
 
-<span class="fc" id="L63">        ClassLoader parent = Thread.currentThread().getContextClassLoader();</span>
+<span class="nc" id="L63">        ClassLoader parent = Thread.currentThread().getContextClassLoader();</span>
 
-<span class="fc" id="L65">        URLClassLoader ucl = new URLClassLoader(urls.toArray(new URL[urls</span>
-<span class="fc" id="L66">                .size()]), parent);</span>
+<span class="nc" id="L65">        URLClassLoader ucl = new URLClassLoader(urls.toArray(new URL[urls</span>
+<span class="nc" id="L66">                .size()]), parent);</span>
 
-<span class="fc" id="L68">        return ucl;</span>
+<span class="nc" id="L68">        return ucl;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

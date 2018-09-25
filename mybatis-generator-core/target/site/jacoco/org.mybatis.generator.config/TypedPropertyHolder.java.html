@@ -26,11 +26,11 @@ public abstract class TypedPropertyHolder extends PropertyHolder {
 	 *  
 	 */
     public TypedPropertyHolder() {
-<span class="fc" id="L29">        super();</span>
-<span class="fc" id="L30">    }</span>
+<span class="nc" id="L29">        super();</span>
+<span class="nc" id="L30">    }</span>
 
     public String getConfigurationType() {
-<span class="fc" id="L33">        return configurationType;</span>
+<span class="nc" id="L33">        return configurationType;</span>
     }
 
     /**
@@ -41,9 +41,9 @@ public abstract class TypedPropertyHolder extends PropertyHolder {
      *            the type specified in the configuration
      */
     public void setConfigurationType(String configurationType) {
-<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        if (!&quot;DEFAULT&quot;.equalsIgnoreCase(configurationType)) { //$NON-NLS-1$</span>
-<span class="fc" id="L45">            this.configurationType = configurationType;</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        if (!&quot;DEFAULT&quot;.equalsIgnoreCase(configurationType)) { //$NON-NLS-1$</span>
+<span class="nc" id="L45">            this.configurationType = configurationType;</span>
         }
-<span class="fc" id="L47">    }</span>
+<span class="nc" id="L47">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

@@ -36,56 +36,56 @@ import org.mybatis.generator.internal.ObjectFactory;
  */
 public class ConnectionFactory {
 
-<span class="fc" id="L39">    private static ConnectionFactory instance = new ConnectionFactory();</span>
+<span class="nc" id="L39">    private static ConnectionFactory instance = new ConnectionFactory();</span>
 
     public static ConnectionFactory getInstance() {
-<span class="fc" id="L42">        return instance;</span>
+<span class="nc" id="L42">        return instance;</span>
     }
 
     /**
 	 *  
 	 */
     private ConnectionFactory() {
-<span class="fc" id="L49">        super();</span>
-<span class="fc" id="L50">    }</span>
+<span class="nc" id="L49">        super();</span>
+<span class="nc" id="L50">    }</span>
 
     public Connection getConnection(JDBCConnectionConfiguration config)
             throws SQLException {
-<span class="fc" id="L54">        Driver driver = getDriver(config);</span>
+<span class="nc" id="L54">        Driver driver = getDriver(config);</span>
 
-<span class="fc" id="L56">        Properties props = new Properties();</span>
+<span class="nc" id="L56">        Properties props = new Properties();</span>
 
-<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if (stringHasValue(config.getUserId())) {</span>
-<span class="fc" id="L59">            props.setProperty(&quot;user&quot;, config.getUserId()); //$NON-NLS-1$</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">        if (stringHasValue(config.getUserId())) {</span>
+<span class="nc" id="L59">            props.setProperty(&quot;user&quot;, config.getUserId()); //$NON-NLS-1$</span>
         }
 
-<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if (stringHasValue(config.getPassword())) {</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        if (stringHasValue(config.getPassword())) {</span>
 <span class="nc" id="L63">            props.setProperty(&quot;password&quot;, config.getPassword()); //$NON-NLS-1$</span>
         }
 
-<span class="fc" id="L66">        props.putAll(config.getProperties());</span>
+<span class="nc" id="L66">        props.putAll(config.getProperties());</span>
 
-<span class="fc" id="L68">        Connection conn = driver.connect(config.getConnectionURL(), props);</span>
+<span class="nc" id="L68">        Connection conn = driver.connect(config.getConnectionURL(), props);</span>
 
-<span class="pc bpc" id="L70" title="1 of 2 branches missed.">        if (conn == null) {</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">        if (conn == null) {</span>
 <span class="nc" id="L71">            throw new SQLException(getString(&quot;RuntimeError.7&quot;)); //$NON-NLS-1$</span>
         }
 
-<span class="fc" id="L74">        return conn;</span>
+<span class="nc" id="L74">        return conn;</span>
     }
 
     private Driver getDriver(JDBCConnectionConfiguration connectionInformation) {
-<span class="fc" id="L78">        String driverClass = connectionInformation.getDriverClass();</span>
+<span class="nc" id="L78">        String driverClass = connectionInformation.getDriverClass();</span>
         Driver driver;
 
         try {
-<span class="fc" id="L82">            Class&lt;?&gt; clazz = ObjectFactory.externalClassForName(driverClass);</span>
-<span class="fc" id="L83">            driver = (Driver) clazz.newInstance();</span>
+<span class="nc" id="L82">            Class&lt;?&gt; clazz = ObjectFactory.externalClassForName(driverClass);</span>
+<span class="nc" id="L83">            driver = (Driver) clazz.newInstance();</span>
 <span class="nc" id="L84">        } catch (Exception e) {</span>
 <span class="nc" id="L85">            throw new RuntimeException(getString(&quot;RuntimeError.8&quot;), e); //$NON-NLS-1$</span>
-<span class="fc" id="L86">        }</span>
+<span class="nc" id="L86">        }</span>
 
-<span class="fc" id="L88">        return driver;</span>
+<span class="nc" id="L88">        return driver;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

@@ -25,15 +25,15 @@ import java.util.ResourceBundle;
 public class Messages {
     private static final String BUNDLE_NAME = &quot;org.mybatis.generator.internal.util.messages.messages&quot;; //$NON-NLS-1$
 
-<span class="fc" id="L28">    private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle</span>
-<span class="fc" id="L29">            .getBundle(BUNDLE_NAME);</span>
+<span class="nc" id="L28">    private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle</span>
+<span class="nc" id="L29">            .getBundle(BUNDLE_NAME);</span>
 
 <span class="nc" id="L31">    private Messages() {</span>
 <span class="nc" id="L32">    }</span>
 
     public static String getString(String key) {
         try {
-<span class="fc" id="L36">            return RESOURCE_BUNDLE.getString(key);</span>
+<span class="nc" id="L36">            return RESOURCE_BUNDLE.getString(key);</span>
 <span class="nc" id="L37">        } catch (MissingResourceException e) {</span>
 <span class="nc" id="L38">            return '!' + key + '!';</span>
         }
@@ -41,7 +41,7 @@ public class Messages {
 
     public static String getString(String key, String parm1) {
         try {
-<span class="fc" id="L44">            return MessageFormat.format(RESOURCE_BUNDLE.getString(key),</span>
+<span class="nc" id="L44">            return MessageFormat.format(RESOURCE_BUNDLE.getString(key),</span>
                     new Object[] { parm1 });
 <span class="nc" id="L46">        } catch (MissingResourceException e) {</span>
 <span class="nc" id="L47">            return '!' + key + '!';</span>
@@ -60,7 +60,7 @@ public class Messages {
     public static String getString(String key, String parm1, String parm2,
             String parm3) {
         try {
-<span class="fc" id="L63">            return MessageFormat.format(RESOURCE_BUNDLE.getString(key),</span>
+<span class="nc" id="L63">            return MessageFormat.format(RESOURCE_BUNDLE.getString(key),</span>
                     new Object[] { parm1, parm2, parm3 });
 <span class="nc" id="L65">        } catch (MissingResourceException e) {</span>
 <span class="nc" id="L66">            return '!' + key + '!';</span>

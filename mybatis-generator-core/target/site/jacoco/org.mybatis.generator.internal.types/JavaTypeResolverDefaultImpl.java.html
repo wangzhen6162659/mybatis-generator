@@ -47,84 +47,84 @@ public class JavaTypeResolverDefaultImpl implements JavaTypeResolver {
     protected Map&lt;Integer, JdbcTypeInformation&gt; typeMap;
     
     public JavaTypeResolverDefaultImpl() {
-<span class="fc" id="L50">        super();</span>
-<span class="fc" id="L51">        properties = new Properties();</span>
-<span class="fc" id="L52">        typeMap = new HashMap&lt;Integer, JdbcTypeInformation&gt;();</span>
+<span class="nc" id="L50">        super();</span>
+<span class="nc" id="L51">        properties = new Properties();</span>
+<span class="nc" id="L52">        typeMap = new HashMap&lt;Integer, JdbcTypeInformation&gt;();</span>
 
-<span class="fc" id="L54">        typeMap.put(Types.ARRAY, new JdbcTypeInformation(&quot;ARRAY&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L55">                new FullyQualifiedJavaType(Object.class.getName())));</span>
-<span class="fc" id="L56">        typeMap.put(Types.BIGINT, new JdbcTypeInformation(&quot;BIGINT&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L57">                new FullyQualifiedJavaType(Long.class.getName())));</span>
-<span class="fc" id="L58">        typeMap.put(Types.BINARY, new JdbcTypeInformation(&quot;BINARY&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L54">        typeMap.put(Types.ARRAY, new JdbcTypeInformation(&quot;ARRAY&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L55">                new FullyQualifiedJavaType(Object.class.getName())));</span>
+<span class="nc" id="L56">        typeMap.put(Types.BIGINT, new JdbcTypeInformation(&quot;BIGINT&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L57">                new FullyQualifiedJavaType(Long.class.getName())));</span>
+<span class="nc" id="L58">        typeMap.put(Types.BINARY, new JdbcTypeInformation(&quot;BINARY&quot;, //$NON-NLS-1$</span>
                 new FullyQualifiedJavaType(&quot;byte[]&quot;))); //$NON-NLS-1$
-<span class="fc" id="L60">        typeMap.put(Types.BIT, new JdbcTypeInformation(&quot;BIT&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L61">                new FullyQualifiedJavaType(Boolean.class.getName())));</span>
-<span class="fc" id="L62">        typeMap.put(Types.BLOB, new JdbcTypeInformation(&quot;BLOB&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L60">        typeMap.put(Types.BIT, new JdbcTypeInformation(&quot;BIT&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L61">                new FullyQualifiedJavaType(Boolean.class.getName())));</span>
+<span class="nc" id="L62">        typeMap.put(Types.BLOB, new JdbcTypeInformation(&quot;BLOB&quot;, //$NON-NLS-1$</span>
                 new FullyQualifiedJavaType(&quot;byte[]&quot;))); //$NON-NLS-1$
-<span class="fc" id="L64">        typeMap.put(Types.BOOLEAN, new JdbcTypeInformation(&quot;BOOLEAN&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L65">                new FullyQualifiedJavaType(Boolean.class.getName())));</span>
-<span class="fc" id="L66">        typeMap.put(Types.CHAR, new JdbcTypeInformation(&quot;CHAR&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L67">                new FullyQualifiedJavaType(String.class.getName())));</span>
-<span class="fc" id="L68">        typeMap.put(Types.CLOB, new JdbcTypeInformation(&quot;CLOB&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L69">                new FullyQualifiedJavaType(String.class.getName())));</span>
-<span class="fc" id="L70">        typeMap.put(Types.DATALINK, new JdbcTypeInformation(&quot;DATALINK&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L71">                new FullyQualifiedJavaType(Object.class.getName())));</span>
-<span class="fc" id="L72">        typeMap.put(Types.DATE, new JdbcTypeInformation(&quot;DATE&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L73">                new FullyQualifiedJavaType(Date.class.getName())));</span>
-<span class="fc" id="L74">        typeMap.put(Types.DISTINCT, new JdbcTypeInformation(&quot;DISTINCT&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L75">                new FullyQualifiedJavaType(Object.class.getName())));</span>
-<span class="fc" id="L76">        typeMap.put(Types.DOUBLE, new JdbcTypeInformation(&quot;DOUBLE&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L77">                new FullyQualifiedJavaType(Double.class.getName())));</span>
-<span class="fc" id="L78">        typeMap.put(Types.FLOAT, new JdbcTypeInformation(&quot;FLOAT&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L79">                new FullyQualifiedJavaType(Double.class.getName())));</span>
-<span class="fc" id="L80">        typeMap.put(Types.INTEGER, new JdbcTypeInformation(&quot;INTEGER&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L81">                new FullyQualifiedJavaType(Integer.class.getName())));</span>
-<span class="fc" id="L82">        typeMap.put(Types.JAVA_OBJECT, new JdbcTypeInformation(&quot;JAVA_OBJECT&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L83">                new FullyQualifiedJavaType(Object.class.getName())));</span>
-<span class="fc" id="L84">        typeMap.put(Types.LONGNVARCHAR, new JdbcTypeInformation(&quot;LONGNVARCHAR&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L85">                new FullyQualifiedJavaType(String.class.getName())));</span>
-<span class="fc" id="L86">        typeMap.put(Types.LONGVARBINARY, new JdbcTypeInformation(</span>
+<span class="nc" id="L64">        typeMap.put(Types.BOOLEAN, new JdbcTypeInformation(&quot;BOOLEAN&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L65">                new FullyQualifiedJavaType(Boolean.class.getName())));</span>
+<span class="nc" id="L66">        typeMap.put(Types.CHAR, new JdbcTypeInformation(&quot;CHAR&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L67">                new FullyQualifiedJavaType(String.class.getName())));</span>
+<span class="nc" id="L68">        typeMap.put(Types.CLOB, new JdbcTypeInformation(&quot;CLOB&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L69">                new FullyQualifiedJavaType(String.class.getName())));</span>
+<span class="nc" id="L70">        typeMap.put(Types.DATALINK, new JdbcTypeInformation(&quot;DATALINK&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L71">                new FullyQualifiedJavaType(Object.class.getName())));</span>
+<span class="nc" id="L72">        typeMap.put(Types.DATE, new JdbcTypeInformation(&quot;DATE&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L73">                new FullyQualifiedJavaType(Date.class.getName())));</span>
+<span class="nc" id="L74">        typeMap.put(Types.DISTINCT, new JdbcTypeInformation(&quot;DISTINCT&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L75">                new FullyQualifiedJavaType(Object.class.getName())));</span>
+<span class="nc" id="L76">        typeMap.put(Types.DOUBLE, new JdbcTypeInformation(&quot;DOUBLE&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L77">                new FullyQualifiedJavaType(Double.class.getName())));</span>
+<span class="nc" id="L78">        typeMap.put(Types.FLOAT, new JdbcTypeInformation(&quot;FLOAT&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L79">                new FullyQualifiedJavaType(Double.class.getName())));</span>
+<span class="nc" id="L80">        typeMap.put(Types.INTEGER, new JdbcTypeInformation(&quot;INTEGER&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L81">                new FullyQualifiedJavaType(Integer.class.getName())));</span>
+<span class="nc" id="L82">        typeMap.put(Types.JAVA_OBJECT, new JdbcTypeInformation(&quot;JAVA_OBJECT&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L83">                new FullyQualifiedJavaType(Object.class.getName())));</span>
+<span class="nc" id="L84">        typeMap.put(Types.LONGNVARCHAR, new JdbcTypeInformation(&quot;LONGNVARCHAR&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L85">                new FullyQualifiedJavaType(String.class.getName())));</span>
+<span class="nc" id="L86">        typeMap.put(Types.LONGVARBINARY, new JdbcTypeInformation(</span>
                 &quot;LONGVARBINARY&quot;, //$NON-NLS-1$
                 new FullyQualifiedJavaType(&quot;byte[]&quot;))); //$NON-NLS-1$
-<span class="fc" id="L89">        typeMap.put(Types.LONGVARCHAR, new JdbcTypeInformation(&quot;LONGVARCHAR&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L90">                new FullyQualifiedJavaType(String.class.getName())));</span>
-<span class="fc" id="L91">        typeMap.put(Types.NCHAR, new JdbcTypeInformation(&quot;NCHAR&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L92">                new FullyQualifiedJavaType(String.class.getName())));</span>
-<span class="fc" id="L93">        typeMap.put(Types.NCLOB, new JdbcTypeInformation(&quot;NCLOB&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L94">                new FullyQualifiedJavaType(String.class.getName())));</span>
-<span class="fc" id="L95">        typeMap.put(Types.NVARCHAR, new JdbcTypeInformation(&quot;NVARCHAR&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L96">                new FullyQualifiedJavaType(String.class.getName())));</span>
-<span class="fc" id="L97">        typeMap.put(Types.NULL, new JdbcTypeInformation(&quot;NULL&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L98">                new FullyQualifiedJavaType(Object.class.getName())));</span>
-<span class="fc" id="L99">        typeMap.put(Types.OTHER, new JdbcTypeInformation(&quot;OTHER&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L100">                new FullyQualifiedJavaType(Object.class.getName())));</span>
-<span class="fc" id="L101">        typeMap.put(Types.REAL, new JdbcTypeInformation(&quot;REAL&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L102">                new FullyQualifiedJavaType(Float.class.getName())));</span>
-<span class="fc" id="L103">        typeMap.put(Types.REF, new JdbcTypeInformation(&quot;REF&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L104">                new FullyQualifiedJavaType(Object.class.getName())));</span>
-<span class="fc" id="L105">        typeMap.put(Types.SMALLINT, new JdbcTypeInformation(&quot;SMALLINT&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L106">                new FullyQualifiedJavaType(Short.class.getName())));</span>
-<span class="fc" id="L107">        typeMap.put(Types.STRUCT, new JdbcTypeInformation(&quot;STRUCT&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L108">                new FullyQualifiedJavaType(Object.class.getName())));</span>
-<span class="fc" id="L109">        typeMap.put(Types.TIME, new JdbcTypeInformation(&quot;TIME&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L110">                new FullyQualifiedJavaType(Date.class.getName())));</span>
-<span class="fc" id="L111">        typeMap.put(Types.TIMESTAMP, new JdbcTypeInformation(&quot;TIMESTAMP&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L112">                new FullyQualifiedJavaType(Date.class.getName())));</span>
-<span class="fc" id="L113">        typeMap.put(Types.TINYINT, new JdbcTypeInformation(&quot;TINYINT&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L114">                new FullyQualifiedJavaType(Byte.class.getName())));</span>
-<span class="fc" id="L115">        typeMap.put(Types.VARBINARY, new JdbcTypeInformation(&quot;VARBINARY&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L89">        typeMap.put(Types.LONGVARCHAR, new JdbcTypeInformation(&quot;LONGVARCHAR&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L90">                new FullyQualifiedJavaType(String.class.getName())));</span>
+<span class="nc" id="L91">        typeMap.put(Types.NCHAR, new JdbcTypeInformation(&quot;NCHAR&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L92">                new FullyQualifiedJavaType(String.class.getName())));</span>
+<span class="nc" id="L93">        typeMap.put(Types.NCLOB, new JdbcTypeInformation(&quot;NCLOB&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L94">                new FullyQualifiedJavaType(String.class.getName())));</span>
+<span class="nc" id="L95">        typeMap.put(Types.NVARCHAR, new JdbcTypeInformation(&quot;NVARCHAR&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L96">                new FullyQualifiedJavaType(String.class.getName())));</span>
+<span class="nc" id="L97">        typeMap.put(Types.NULL, new JdbcTypeInformation(&quot;NULL&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L98">                new FullyQualifiedJavaType(Object.class.getName())));</span>
+<span class="nc" id="L99">        typeMap.put(Types.OTHER, new JdbcTypeInformation(&quot;OTHER&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L100">                new FullyQualifiedJavaType(Object.class.getName())));</span>
+<span class="nc" id="L101">        typeMap.put(Types.REAL, new JdbcTypeInformation(&quot;REAL&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L102">                new FullyQualifiedJavaType(Float.class.getName())));</span>
+<span class="nc" id="L103">        typeMap.put(Types.REF, new JdbcTypeInformation(&quot;REF&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L104">                new FullyQualifiedJavaType(Object.class.getName())));</span>
+<span class="nc" id="L105">        typeMap.put(Types.SMALLINT, new JdbcTypeInformation(&quot;SMALLINT&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L106">                new FullyQualifiedJavaType(Short.class.getName())));</span>
+<span class="nc" id="L107">        typeMap.put(Types.STRUCT, new JdbcTypeInformation(&quot;STRUCT&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L108">                new FullyQualifiedJavaType(Object.class.getName())));</span>
+<span class="nc" id="L109">        typeMap.put(Types.TIME, new JdbcTypeInformation(&quot;TIME&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L110">                new FullyQualifiedJavaType(Date.class.getName())));</span>
+<span class="nc" id="L111">        typeMap.put(Types.TIMESTAMP, new JdbcTypeInformation(&quot;TIMESTAMP&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L112">                new FullyQualifiedJavaType(Date.class.getName())));</span>
+<span class="nc" id="L113">        typeMap.put(Types.TINYINT, new JdbcTypeInformation(&quot;TINYINT&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L114">                new FullyQualifiedJavaType(Byte.class.getName())));</span>
+<span class="nc" id="L115">        typeMap.put(Types.VARBINARY, new JdbcTypeInformation(&quot;VARBINARY&quot;, //$NON-NLS-1$</span>
                 new FullyQualifiedJavaType(&quot;byte[]&quot;))); //$NON-NLS-1$
-<span class="fc" id="L117">        typeMap.put(Types.VARCHAR, new JdbcTypeInformation(&quot;VARCHAR&quot;, //$NON-NLS-1$</span>
-<span class="fc" id="L118">                new FullyQualifiedJavaType(String.class.getName())));</span>
+<span class="nc" id="L117">        typeMap.put(Types.VARCHAR, new JdbcTypeInformation(&quot;VARCHAR&quot;, //$NON-NLS-1$</span>
+<span class="nc" id="L118">                new FullyQualifiedJavaType(String.class.getName())));</span>
         
-<span class="fc" id="L120">    }</span>
+<span class="nc" id="L120">    }</span>
 
     public void addConfigurationProperties(Properties properties) {
-<span class="fc" id="L123">        this.properties.putAll(properties);</span>
-<span class="fc" id="L124">        forceBigDecimals = StringUtility</span>
-<span class="fc" id="L125">                .isTrue(properties</span>
-<span class="fc" id="L126">                        .getProperty(PropertyRegistry.TYPE_RESOLVER_FORCE_BIG_DECIMALS));</span>
-<span class="fc" id="L127">    }</span>
+<span class="nc" id="L123">        this.properties.putAll(properties);</span>
+<span class="nc" id="L124">        forceBigDecimals = StringUtility</span>
+<span class="nc" id="L125">                .isTrue(properties</span>
+<span class="nc" id="L126">                        .getProperty(PropertyRegistry.TYPE_RESOLVER_FORCE_BIG_DECIMALS));</span>
+<span class="nc" id="L127">    }</span>
 
     public FullyQualifiedJavaType calculateJavaType(
             IntrospectedColumn introspectedColumn) {
@@ -186,12 +186,12 @@ public class JavaTypeResolverDefaultImpl implements JavaTypeResolver {
     }
 
     public void setWarnings(List&lt;String&gt; warnings) {
-<span class="fc" id="L189">        this.warnings = warnings;</span>
-<span class="fc" id="L190">    }</span>
+<span class="nc" id="L189">        this.warnings = warnings;</span>
+<span class="nc" id="L190">    }</span>
 
     public void setContext(Context context) {
-<span class="fc" id="L193">        this.context = context;</span>
-<span class="fc" id="L194">    }</span>
+<span class="nc" id="L193">        this.context = context;</span>
+<span class="nc" id="L194">    }</span>
 
     public static class JdbcTypeInformation {
         private String jdbcTypeName;
@@ -199,10 +199,10 @@ public class JavaTypeResolverDefaultImpl implements JavaTypeResolver {
         private FullyQualifiedJavaType fullyQualifiedJavaType;
 
         public JdbcTypeInformation(String jdbcTypeName,
-<span class="fc" id="L202">                FullyQualifiedJavaType fullyQualifiedJavaType) {</span>
-<span class="fc" id="L203">            this.jdbcTypeName = jdbcTypeName;</span>
-<span class="fc" id="L204">            this.fullyQualifiedJavaType = fullyQualifiedJavaType;</span>
-<span class="fc" id="L205">        }</span>
+<span class="nc" id="L202">                FullyQualifiedJavaType fullyQualifiedJavaType) {</span>
+<span class="nc" id="L203">            this.jdbcTypeName = jdbcTypeName;</span>
+<span class="nc" id="L204">            this.fullyQualifiedJavaType = fullyQualifiedJavaType;</span>
+<span class="nc" id="L205">        }</span>
 
         public String getJdbcTypeName() {
 <span class="nc" id="L208">            return jdbcTypeName;</span>

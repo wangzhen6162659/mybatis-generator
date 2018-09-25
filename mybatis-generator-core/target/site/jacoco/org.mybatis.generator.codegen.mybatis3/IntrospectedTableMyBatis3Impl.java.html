@@ -59,10 +59,10 @@ public class IntrospectedTableMyBatis3Impl extends IntrospectedTable {
      * Instantiates a new introspected table my batis3 impl.
      */
     public IntrospectedTableMyBatis3Impl() {
-<span class="fc" id="L62">        super(TargetRuntime.MYBATIS3);</span>
-<span class="fc" id="L63">        javaModelGenerators = new ArrayList&lt;AbstractJavaGenerator&gt;();</span>
-<span class="fc" id="L64">        clientGenerators = new ArrayList&lt;AbstractJavaGenerator&gt;();</span>
-<span class="fc" id="L65">    }</span>
+<span class="nc" id="L62">        super(TargetRuntime.MYBATIS3);</span>
+<span class="nc" id="L63">        javaModelGenerators = new ArrayList&lt;AbstractJavaGenerator&gt;();</span>
+<span class="nc" id="L64">        clientGenerators = new ArrayList&lt;AbstractJavaGenerator&gt;();</span>
+<span class="nc" id="L65">    }</span>
 
     /* (non-Javadoc)
      * @see org.mybatis.generator.api.IntrospectedTable#calculateGenerators(java.util.List, org.mybatis.generator.api.ProgressCallback)
@@ -135,16 +135,16 @@ public class IntrospectedTableMyBatis3Impl extends IntrospectedTable {
      * @return the abstract java client generator
      */
     protected AbstractJavaClientGenerator createJavaClientGenerator() {
-<span class="pc bpc" id="L138" title="1 of 2 branches missed.">        if (context.getJavaClientGeneratorConfiguration() == null) {</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">        if (context.getJavaClientGeneratorConfiguration() == null) {</span>
 <span class="nc" id="L139">            return null;</span>
         }
         
-<span class="fc" id="L142">        String type = context.getJavaClientGeneratorConfiguration()</span>
-<span class="fc" id="L143">                .getConfigurationType();</span>
+<span class="nc" id="L142">        String type = context.getJavaClientGeneratorConfiguration()</span>
+<span class="nc" id="L143">                .getConfigurationType();</span>
 
         AbstractJavaClientGenerator javaGenerator;
-<span class="pc bpc" id="L146" title="1 of 2 branches missed.">        if (&quot;XMLMAPPER&quot;.equalsIgnoreCase(type)) { //$NON-NLS-1$</span>
-<span class="fc" id="L147">            javaGenerator = new JavaMapperGenerator();</span>
+<span class="nc bnc" id="L146" title="All 2 branches missed.">        if (&quot;XMLMAPPER&quot;.equalsIgnoreCase(type)) { //$NON-NLS-1$</span>
+<span class="nc" id="L147">            javaGenerator = new JavaMapperGenerator();</span>
 <span class="nc bnc" id="L148" title="All 2 branches missed.">        } else if (&quot;MIXEDMAPPER&quot;.equalsIgnoreCase(type)) { //$NON-NLS-1$</span>
 <span class="nc" id="L149">            javaGenerator = new MixedClientGenerator();</span>
 <span class="nc bnc" id="L150" title="All 2 branches missed.">        } else if (&quot;ANNOTATEDMAPPER&quot;.equalsIgnoreCase(type)) { //$NON-NLS-1$</span>
@@ -156,7 +156,7 @@ public class IntrospectedTableMyBatis3Impl extends IntrospectedTable {
 <span class="nc" id="L156">                    .createInternalObject(type);</span>
         }
         
-<span class="fc" id="L159">        return javaGenerator;</span>
+<span class="nc" id="L159">        return javaGenerator;</span>
     }
 
     /**
@@ -312,13 +312,13 @@ public class IntrospectedTableMyBatis3Impl extends IntrospectedTable {
      */
     @Override
     public boolean requiresXMLGenerator() {
-<span class="fc" id="L315">        AbstractJavaClientGenerator javaClientGenerator =</span>
-<span class="fc" id="L316">            createJavaClientGenerator();</span>
+<span class="nc" id="L315">        AbstractJavaClientGenerator javaClientGenerator =</span>
+<span class="nc" id="L316">            createJavaClientGenerator();</span>
         
-<span class="pc bpc" id="L318" title="1 of 2 branches missed.">        if (javaClientGenerator == null) {</span>
+<span class="nc bnc" id="L318" title="All 2 branches missed.">        if (javaClientGenerator == null) {</span>
 <span class="nc" id="L319">            return false;</span>
         } else {
-<span class="fc" id="L321">            return javaClientGenerator.requiresXMLGenerator();</span>
+<span class="nc" id="L321">            return javaClientGenerator.requiresXMLGenerator();</span>
         }
     }
 }

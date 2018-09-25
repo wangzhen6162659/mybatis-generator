@@ -31,20 +31,20 @@ public abstract class PropertyHolder {
 	 *  
 	 */
     public PropertyHolder() {
-<span class="fc" id="L34">        super();</span>
-<span class="fc" id="L35">        properties = new Properties();</span>
-<span class="fc" id="L36">    }</span>
+<span class="nc" id="L34">        super();</span>
+<span class="nc" id="L35">        properties = new Properties();</span>
+<span class="nc" id="L36">    }</span>
 
     public void addProperty(String name, String value) {
-<span class="fc" id="L39">        properties.setProperty(name, value);</span>
-<span class="fc" id="L40">    }</span>
+<span class="nc" id="L39">        properties.setProperty(name, value);</span>
+<span class="nc" id="L40">    }</span>
 
     public String getProperty(String name) {
-<span class="fc" id="L43">        return properties.getProperty(name);</span>
+<span class="nc" id="L43">        return properties.getProperty(name);</span>
     }
 
     public Properties getProperties() {
-<span class="fc" id="L47">        return properties;</span>
+<span class="nc" id="L47">        return properties;</span>
     }
 
     protected void addPropertyXmlElements(XmlElement xmlElement) {

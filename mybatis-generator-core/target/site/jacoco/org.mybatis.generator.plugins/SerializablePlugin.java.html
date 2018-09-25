@@ -47,25 +47,25 @@ public class SerializablePlugin extends PluginAdapter {
 	private boolean suppressJavaInterface;
 
 	public SerializablePlugin() {
-<span class="fc" id="L50">		super();</span>
-<span class="fc" id="L51">		serializable = new FullyQualifiedJavaType(&quot;java.io.Serializable&quot;); //$NON-NLS-1$</span>
-<span class="fc" id="L52">		gwtSerializable = new FullyQualifiedJavaType(</span>
+<span class="nc" id="L50">		super();</span>
+<span class="nc" id="L51">		serializable = new FullyQualifiedJavaType(&quot;java.io.Serializable&quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L52">		gwtSerializable = new FullyQualifiedJavaType(</span>
 				&quot;com.google.gwt.user.client.rpc.IsSerializable&quot;); //$NON-NLS-1$
-<span class="fc" id="L54">	}</span>
+<span class="nc" id="L54">	}</span>
 
 	public boolean validate(List&lt;String&gt; warnings) {
 		// this plugin is always valid
-<span class="fc" id="L58">		return true;</span>
+<span class="nc" id="L58">		return true;</span>
 	}
 
 	@Override
 	public void setProperties(Properties properties) {
-<span class="fc" id="L63">		super.setProperties(properties);</span>
-<span class="fc" id="L64">		addGWTInterface = Boolean.valueOf(properties</span>
-<span class="fc" id="L65">				.getProperty(&quot;addGWTInterface&quot;)); //$NON-NLS-1$</span>
-<span class="fc" id="L66">		suppressJavaInterface = Boolean.valueOf(properties</span>
-<span class="fc" id="L67">				.getProperty(&quot;suppressJavaInterface&quot;)); //$NON-NLS-1$</span>
-<span class="fc" id="L68">	}</span>
+<span class="nc" id="L63">		super.setProperties(properties);</span>
+<span class="nc" id="L64">		addGWTInterface = Boolean.valueOf(properties</span>
+<span class="nc" id="L65">				.getProperty(&quot;addGWTInterface&quot;)); //$NON-NLS-1$</span>
+<span class="nc" id="L66">		suppressJavaInterface = Boolean.valueOf(properties</span>
+<span class="nc" id="L67">				.getProperty(&quot;suppressJavaInterface&quot;)); //$NON-NLS-1$</span>
+<span class="nc" id="L68">	}</span>
 
 	@Override
 	public boolean modelBaseRecordClassGenerated(TopLevelClass topLevelClass,
